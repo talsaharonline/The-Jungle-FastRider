@@ -1,0 +1,23 @@
+.TitleCircle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #2e2e2e;
+  border-radius: 50%;
+}
+
+.TitleCircle .TitleIcon {
+  width: 3rem;
+  height: 3rem;
+  z-index: 1;
+}
+/*# sourceMappingURL=TitleIcon.module.css.map */
