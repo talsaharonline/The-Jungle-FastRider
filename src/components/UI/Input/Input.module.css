@@ -3,5 +3,11 @@
   height: 3.5rem;
   margin: 1rem auto 0.5rem auto;
   padding: 1rem;
+  color: black;
+  font-size: 1.3rem;
+}
+
+.Input:focus {
+  outline: none;
 }
 /*# sourceMappingURL=Input.module.css.map */

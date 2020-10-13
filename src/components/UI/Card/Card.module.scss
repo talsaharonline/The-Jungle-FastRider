@@ -1,0 +1,28 @@
+@import "../../../design-tokens/scss-variables";
+
+.Card {
+  position: relative;
+  width: 11.5rem;
+  height: 11.5rem;
+  margin: 0.4rem;
+  padding: 0.5rem;
+  background: $card-background-color;
+  border-top: 0.4rem solid red;
+
+  .Header,
+  .Time,
+  .Tickets {
+    color: $primary-text-color;
+  }
+
+  .Text {
+    color: $secondary-text-color;
+  }
+
+  .Bottom {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0.5rem;
+  }
+}
