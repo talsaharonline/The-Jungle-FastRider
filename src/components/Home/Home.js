@@ -11,12 +11,16 @@ import PointerTitleIcon from '../../assets/Titles/ico-02.png';
 import TimerTitleIcon from '../../assets/Titles/ico-03.png';
 
 import * as API_Functions from '../../API/API_Functions';
+import * as API_Constants from '../../API/API_Constants';
 import { useToasts } from 'react-toast-notifications';
 
 const Home = (props) => {
 
     const { addToast } = useToasts();
     const [fastRiderRides, setFastRiderRides] = useState([]);
+    const [userPIN, setUserPIN] = useState([]);
+    const [chosenCardRideID, setChosenCardRideID] = useState([]);
+
 
     useEffect(() => {
 
@@ -34,6 +38,43 @@ const Home = (props) => {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const onChangeInputHandler = (event) => {
+
+        setUserPIN(event.target.value);
+
+    };
+
+    const onClickCardHandler = (rideID) => {
+        // change the background color
+        setChosenCardRideID(rideID);
+
+    };
+
+    const onSubmitButtonHandler = () => {
+
+        let requiredDataToPost = {
+
+            pin: userPIN,
+            ride_id: chosenCardRideID, 
+            token: API_Constants.API_KEY
+        };
+
+        console.log(requiredDataToPost);
+
+        API_Functions.postChosenRide(requiredDataToPost)
+
+            .then(response => {
+
+                console.log(response);
+
+            }).catch(error => {
+
+                addToast(error.message, { appearance: 'error' });
+
+            });
+
+    };
 
 
     return (
@@ -62,7 +103,9 @@ const Home = (props) => {
 
             </Title>
 
-            <Input />
+            <Input
+                onChangeHandler={onChangeInputHandler}
+            />
 
             <div className={styles.Cards}>
 
@@ -71,11 +114,13 @@ const Home = (props) => {
                     <HomeCard
 
                         key={card.id}
+                        rideID={card.id}
                         zoneName={card.zone.name}
                         playground={card.name}
                         remainingTickets={card.remaining_tickets}
                         returnTime={card.return_time}
-                        borderTopColor={card.color}
+                        cardColor={card.zone.color}
+                        onClickHandler={onClickCardHandler}
 
                     />
 
@@ -83,7 +128,9 @@ const Home = (props) => {
 
             </div>
 
-            <Button>SUBMIT</Button>
+            <Button onClickHandler={onSubmitButtonHandler} >
+                SUBMIT
+            </Button>
 
         </div>
 

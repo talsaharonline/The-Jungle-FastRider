@@ -5,7 +5,11 @@ const Input = (props) => {
 
     return (
 
-        <input className={styles.Input} placeholder="#PIN" />
+        <input
+            className={styles.Input}
+            placeholder="#PIN"
+            onChange={props.onChangeHandler}
+        />
 
     );
 

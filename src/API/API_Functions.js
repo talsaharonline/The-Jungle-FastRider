@@ -8,3 +8,17 @@ export const getFastRiderRides = async () => {
     return data;
 
 };
+
+export const postChosenRide = async (requiredDataToPost) => {
+
+    const { data } = await axios.post(API_Constants.API_BASE_URL + 'tickets', {
+
+        params: requiredDataToPost
+          
+
+    });
+
+    console.log(data);
+    return data;
+
+};
