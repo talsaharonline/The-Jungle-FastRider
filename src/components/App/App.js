@@ -7,6 +7,8 @@ import Header from '../UI/Header/Header';
 import Home from '../Home/Home';
 import AccessCode from '../AccessCode/AccessCode';
 
+import { ToastProvider } from 'react-toast-notifications';
+
 
 function App() {
 
@@ -18,8 +20,12 @@ function App() {
 
       <Switch>
 
-        <Route path="/access-code" component={AccessCode} />
-        <Route exact path="/" component={Home} />
+        <ToastProvider>
+
+          <Route path="/access-code" component={AccessCode} />
+          <Route exact path="/" component={Home} />
+          
+        </ToastProvider>
 
       </Switch>
 

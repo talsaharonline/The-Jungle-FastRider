@@ -17,7 +17,7 @@
   border-top: 0.4rem solid red;
 }
 
-.HomeCard .ParkName,
+.HomeCard .ZoneName,
 .HomeCard .Time,
 .HomeCard .Tickets {
   color: #656565;
