@@ -12,6 +12,7 @@ import PointerTitleIcon from '../../assets/Titles/ico-02.png';
 import TimerTitleIcon from '../../assets/Titles/ico-03.png';
 
 import * as API_Functions from '../../API/API_Functions';
+import * as API_PIN_Generator from '../../API/API_PIN_Generator';
 import { useToasts } from 'react-toast-notifications';
 
 const Home = (props) => {
@@ -22,14 +23,16 @@ const Home = (props) => {
     const [fastRiderRides, setFastRiderRides] = useState([]);
     const [userPIN, setUserPIN] = useState([]);
     const [chosenCardRideID, setChosenCardRideID] = useState([]);
-    const [accessData, setAccessData] = useState({});
+    const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCode, setRedirectToAccessCode] = useState([]);
 
 
     const scrollPositionHandler = () => {
+
         const position = window.pageYOffset;
-        console.log(position);
+
         setScrollPosition(position);
+
     };
 
     const scrollEventHandler = () => {
@@ -37,8 +40,11 @@ const Home = (props) => {
         window.addEventListener('scroll', scrollPositionHandler, { passive: true });
 
         return () => {
+
             window.removeEventListener('scroll', scrollPositionHandler);
+
         };
+
     }
 
     useEffect(() => {
@@ -73,8 +79,7 @@ const Home = (props) => {
 
             });
 
-
-        // console.log(String.fromCharCode(1,2,3));
+        API_PIN_Generator.generatePIN();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -97,11 +102,9 @@ const Home = (props) => {
 
             .then(response => {
 
-                setAccessData(response);
+                setAccessData([response]);
 
                 // loader
-
-                setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code", state: { accessData: accessData } }} />)
 
             }).catch(error => {
 
@@ -111,6 +114,18 @@ const Home = (props) => {
 
     };
 
+    useEffect(() => {
+
+        console.log(accessData);
+
+        if (accessData.length > 0) {
+
+            console.log("im in!");
+            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code", state: { accessData: accessData } }} />)
+
+        }
+
+    }, [accessData])
 
     return (
 

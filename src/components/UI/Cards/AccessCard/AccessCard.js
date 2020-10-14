@@ -16,23 +16,23 @@ const AccessCard = (props) => {
         <div className={styles.AccessCard}>
 
             <div className={styles.Header}>
-
-                <h3 className={styles.Playground}>{props.data ? props.data.ride.name : "loading..."}</h3>
-                <h3 className={styles.ParkName}>{props.data ? props.data.zone.name : "loading..."}</h3>
+                {console.log(props.data.length)}
+                <h3 className={styles.Playground}>{props.data.length ? props.data[0].ride.name : "loading..."}</h3>
+                <h3 className={styles.ParkName}>{props.data.length ? props.data[0].zone.name : "loading..."}</h3>
 
             </div>
 
             <div className={styles.Middle}>
 
                 <h3 className={styles.Text}>Return At</h3>
-                <h2 className={styles.Time}>{props.data ? props.data.return_time : "loading..."}</h2>
+                <h2 className={styles.Time}>{props.data.length ? props.data[0].return_time : "loading..."}</h2>
 
             </div>
 
             <div className={styles.Footer}>
 
                 <h3 className={styles.Text}>Use Access Code</h3>
-                <h2 className={styles.Code}>{props.data ? props.data.access_code : "loading..."}</h2>
+                <h2 className={styles.Code}>{props.data.length ? props.data[0].access_code : "loading..."}</h2>
 
             </div>
 

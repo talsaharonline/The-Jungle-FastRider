@@ -19,7 +19,7 @@ const AccessCode = (props) => {
 
             </Title>
 
-            <AccessCard data={props.location.state} />
+            {props.location.state.accessData ? <AccessCard data={props.location.state.accessData} /> : "loading..."}
 
         </div>
 
