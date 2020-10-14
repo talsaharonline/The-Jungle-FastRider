@@ -4,13 +4,13 @@ import styles from './AccessCard.module.css';
 
 const AccessCard = (props) => {
 
-    const [modifiedTimeString, setModifiedTimestring] = useState("");
+    const [modifiedTimeString, setModifiedTimeString] = useState("");
 
     useEffect(() => {
 
         if (props.data) {
 
-            setModifiedTimestring(props.data[0].return_time.slice(11, 16));
+            setModifiedTimeString(props.data[0].return_time.slice(11, 16));
 
         };
 

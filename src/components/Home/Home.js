@@ -116,8 +116,6 @@ const Home = (props) => {
 
     useEffect(() => {
 
-        console.log(accessData);
-
         if (accessData.length > 0) {
 
             console.log("im in!");

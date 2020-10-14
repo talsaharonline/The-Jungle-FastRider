@@ -8,7 +8,7 @@ import TicketsCardIcon from '../../../../assets/Cards/ico-g-01.png';
 
 const HomeCard = (props) => {
 
-    const [modifiedTimeString, setModifiedTimestring] = useState("");
+    const [modifiedTimeString, setModifiedTimeString] = useState("");
     const [dynamicCardBackgroundColor, setDynamicCardBackgroundColor] = useState({});
     const [checkIfCardClicked, setCheckIfCardClicked] = useState({isClicked: false});
 
@@ -16,7 +16,7 @@ const HomeCard = (props) => {
 
         if (props.returnTime) {
 
-            setModifiedTimestring(props.returnTime.slice(11, 16));
+            setModifiedTimeString(props.returnTime.slice(11, 16));
 
         }
 
