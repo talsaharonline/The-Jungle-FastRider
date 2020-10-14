@@ -1,12 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './AccessCard.module.css';
 
 
 const AccessCard = (props) => {
 
+    const [modifiedTimeString, setModifiedTimestring] = useState("");
+
     useEffect(() => {
 
-        console.log(props.location.state);
+        if (props.data) {
+
+            setModifiedTimestring(props.data[0].return_time.slice(11, 16));
+
+        };
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -16,23 +22,32 @@ const AccessCard = (props) => {
         <div className={styles.AccessCard}>
 
             <div className={styles.Header}>
-                {console.log(props.data.length)}
-                <h3 className={styles.Playground}>{props.data.length ? props.data[0].ride.name : "loading..."}</h3>
-                <h3 className={styles.ParkName}>{props.data.length ? props.data[0].zone.name : "loading..."}</h3>
+
+                <h3 className={styles.Playground}>
+                    {props.data.length ? props.data[0].ride.name : "loading..."}
+                </h3>
+
+                <h3 className={styles.ParkName}>
+                    {props.data.length ? props.data[0].ride.zone.name : "loading..."}
+                </h3>
 
             </div>
 
             <div className={styles.Middle}>
 
                 <h3 className={styles.Text}>Return At</h3>
-                <h2 className={styles.Time}>{props.data.length ? props.data[0].return_time : "loading..."}</h2>
+                <h2 className={styles.Time}>
+                    {modifiedTimeString ? modifiedTimeString : "loading..."}
+                </h2>
 
             </div>
 
             <div className={styles.Footer}>
 
                 <h3 className={styles.Text}>Use Access Code</h3>
-                <h2 className={styles.Code}>{props.data.length ? props.data[0].access_code : "loading..."}</h2>
+                <h2 className={styles.Code}>
+                    {props.data.length ? props.data[0].access_code : "loading..."}
+                </h2>
 
             </div>
 
