@@ -5,10 +5,14 @@
   width: 100vw;
   height: 4.5rem;
   background: #4c4c4b;
-  color: #ffffff;
+  color: #e9e9e9;
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
   font-family: "Open Sans", sans-serif;
+}
+
+.Button:focus {
+  outline: none;
 }
 /*# sourceMappingURL=Button.module.css.map */

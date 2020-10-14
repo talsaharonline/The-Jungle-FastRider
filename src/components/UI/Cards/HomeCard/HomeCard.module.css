@@ -1,4 +1,4 @@
-.Card {
+.HomeCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,17 +17,17 @@
   border-top: 0.4rem solid red;
 }
 
-.Card .Header,
-.Card .Time,
-.Card .Tickets {
+.HomeCard .ParkName,
+.HomeCard .Time,
+.HomeCard .Tickets {
   color: #656565;
 }
 
-.Card .Text {
-  color: #ffffff;
+.HomeCard .Playground {
+  color: #e9e9e9;
 }
 
-.Card .Bottom {
+.HomeCard .Footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +42,7 @@
   padding: 0 0.4rem;
 }
 
-.Card .Time, .Card .Tickets {
+.HomeCard .Time, .HomeCard .Tickets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,4 +53,4 @@
       -ms-flex-align: center;
           align-items: center;
 }
-/*# sourceMappingURL=Card.module.css.map */
+/*# sourceMappingURL=HomeCard.module.css.map */

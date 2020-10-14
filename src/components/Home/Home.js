@@ -3,7 +3,7 @@ import styles from './Home.module.css';
 
 import Title from '../UI/Title/Title/Title';
 import Input from '../UI/Input/Input';
-import Card from '../UI/Card/Card/Card';
+import HomeCard from '../UI/Cards/HomeCard/HomeCard';
 import Button from '../UI/Button/Button';
 
 import TicketTitleIcon from '../../assets/Titles/ico-01.png';
@@ -42,16 +42,16 @@ const Home = (props) => {
 
             <div className={styles.Cards}>
 
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
 
             </div>
 

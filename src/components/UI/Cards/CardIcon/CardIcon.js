@@ -6,7 +6,7 @@ const CardIcon = (props) => {
 
     return (
 
-        <img className={styles.CardIcon} src={props.iconSource} />
+        <img className={styles.CardIcon} src={props.iconSource} alt=""/>
 
     );
 

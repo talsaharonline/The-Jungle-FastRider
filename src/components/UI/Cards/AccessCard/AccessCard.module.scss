@@ -1,0 +1,64 @@
+@import "../../../../design-tokens/_scss-variables";
+
+.AccessCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90vw;
+  height: 11.5rem;
+  margin: 0.4rem auto;
+  padding: 0.3rem 1rem;
+  background: $card-background-color;
+  border-top: 0.4rem solid red;
+
+  .Header {
+    display: flex;
+    justify-content: space-between;
+
+    .Playground {
+      color: $secondary-text-color;
+    }
+
+    .ParkName {
+      color: $primary-text-color;
+    }
+  }
+
+  .Middle {
+    .Text {
+      color: $primary-text-color;
+    }
+
+    .Time {
+      color: $secondary-text-color;
+    }
+  }
+
+  .Footer {
+    .Text {
+      color: $primary-text-color;
+    }
+
+    .Code {
+      color: $secondary-text-color;
+    }
+  }
+
+  // .Text {
+  //   color: $secondary-text-color;
+  // }
+
+  // .Bottom {
+  //   display: flex;
+  //   flex-direction: row;
+  //   text-align: center;
+  //   justify-content: space-between;
+  //   padding: 0 0.4rem;
+  // }
+
+  // .Time, .Tickets {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+}

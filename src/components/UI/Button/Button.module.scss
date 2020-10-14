@@ -1,4 +1,4 @@
-@import '../../../design-tokens/scss-variables';
+@import "../../../design-tokens/scss-variables";
 
 .Button {
   position: fixed;
@@ -12,4 +12,8 @@
   font-weight: bold;
   border: none;
   font-family: "Open Sans", sans-serif;
+
+  &:focus {
+    outline: none;
+  }
 }

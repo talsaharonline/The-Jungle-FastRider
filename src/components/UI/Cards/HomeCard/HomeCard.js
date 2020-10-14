@@ -1,21 +1,21 @@
 import React from 'react';
-import styles from './Card.module.css';
+import styles from './HomeCard.module.css';
 import CardIcon from '../CardIcon/CardIcon';
 
 import TimeCardIcon from '../../../../assets/Cards/ico-g-03.png';
 import TicketsCardIcon from '../../../../assets/Cards/ico-g-01.png';
 
 
-const Card = (props) => {
+const HomeCard = (props) => {
 
     return (
 
-        <div className={styles.Card}>
+        <div className={styles.HomeCard}>
 
-            <h3 className={styles.Header}>Header</h3>
-            <h1 className={styles.Text}>Text</h1>
+            <h3 className={styles.ParkName}>Gibbon Island</h3>
+            <h2 className={styles.Playground}>Tropical Rush</h2>
 
-            <div className={styles.Bottom}>
+            <div className={styles.Footer}>
 
                 <h3 className={styles.Time}>
 
@@ -39,4 +39,4 @@ const Card = (props) => {
 
 };
 
-export default Card;
+export default HomeCard;

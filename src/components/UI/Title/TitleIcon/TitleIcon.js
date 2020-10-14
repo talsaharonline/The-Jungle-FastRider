@@ -7,7 +7,7 @@ const TitleIcon = (props) => {
 
         <div className={styles.TitleCircle}>
 
-            <img className={styles.TitleIcon} src={props.iconSource} />
+            <img className={styles.TitleIcon} src={props.iconSource} alt="" />
 
         </div>
 

@@ -1,6 +1,6 @@
 @import "../../../../design-tokens/_scss-variables";
 
-.Card {
+.HomeCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,17 +11,17 @@
   background: $card-background-color;
   border-top: 0.4rem solid red;
 
-  .Header,
+  .ParkName,
   .Time,
   .Tickets {
     color: $primary-text-color;
   }
 
-  .Text {
+  .Playground {
     color: $secondary-text-color;
   }
 
-  .Bottom {
+  .Footer {
     display: flex;
     flex-direction: row;
     text-align: center;

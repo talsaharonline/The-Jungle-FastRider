@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './App.module.css';
 
+import { Route, Switch } from 'react-router-dom';
+
 import Header from '../UI/Header/Header';
 import Home from '../Home/Home';
 import AccessCode from '../AccessCode/AccessCode';
-
-import { Route, Switch } from 'react-router-dom';
 
 
 function App() {
