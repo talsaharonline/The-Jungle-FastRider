@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,MAAM;EACd,YAAY,EAAE,MAAM;CACrB",
+    "sources": [
+        "CardIcon.module.scss"
+    ],
+    "names": [],
+    "file": "CardIcon.module.css"
+}
