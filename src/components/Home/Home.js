@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
+import { Redirect } from "react-router-dom";
 
 import Title from '../UI/Title/Title/Title';
 import Input from '../UI/Input/Input';
@@ -16,12 +17,49 @@ import { useToasts } from 'react-toast-notifications';
 const Home = (props) => {
 
     const { addToast } = useToasts();
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [displayButton, setDisplayButton] = useState(false);
     const [fastRiderRides, setFastRiderRides] = useState([]);
     const [userPIN, setUserPIN] = useState([]);
     const [chosenCardRideID, setChosenCardRideID] = useState([]);
+    const [accessData, setAccessData] = useState({});
+    const [redirectToAccessCode, setRedirectToAccessCode] = useState([]);
+
+
+    const scrollPositionHandler = () => {
+        const position = window.pageYOffset;
+        console.log(position);
+        setScrollPosition(position);
+    };
+
+    const scrollEventHandler = () => {
+
+        window.addEventListener('scroll', scrollPositionHandler, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', scrollPositionHandler);
+        };
+    }
+
+    useEffect(() => {
+
+        if (scrollPosition >= 0 && scrollPosition <= 300) {
+
+            setDisplayButton(true);
+
+        } else {
+
+            setDisplayButton(false);
+
+        }
+
+
+    }, [scrollPosition]);
 
 
     useEffect(() => {
+
+        scrollEventHandler();
 
         API_Functions.getFastRiderRides()
 
@@ -35,6 +73,9 @@ const Home = (props) => {
 
             });
 
+
+        // console.log(String.fromCharCode(1,2,3));
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -45,7 +86,7 @@ const Home = (props) => {
     };
 
     const onClickCardHandler = (rideID) => {
-        // change the background color
+
         setChosenCardRideID(rideID);
 
     };
@@ -56,7 +97,11 @@ const Home = (props) => {
 
             .then(response => {
 
-                console.log(response);
+                setAccessData(response);
+
+                // loader
+
+                setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code", state: { accessData: accessData } }} />)
 
             }).catch(error => {
 
@@ -70,6 +115,8 @@ const Home = (props) => {
     return (
 
         <div className={styles.Home}>
+
+            {redirectToAccessCode ? redirectToAccessCode : null}
 
             <Title iconSource={TicketTitleIcon}>
 
@@ -118,11 +165,14 @@ const Home = (props) => {
 
             </div>
 
-            <Button onClickHandler={onSubmitButtonHandler} >
+            <Button
+                onClickHandler={onSubmitButtonHandler}
+                visibility={displayButton}
+            >
                 SUBMIT
             </Button>
 
-        </div>
+        </div >
 
     );
 

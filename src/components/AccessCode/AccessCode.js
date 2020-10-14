@@ -11,7 +11,7 @@ const AccessCode = (props) => {
     return (
 
         <div className={styles.AccessCode}>
-            
+
             <Title iconSource={AccessTitleIcon}>
 
                 Thank you for using The Jungle™ FastRider ticket system -
@@ -19,7 +19,7 @@ const AccessCode = (props) => {
 
             </Title>
 
-            <AccessCard />
+            <AccessCard data={props.location.state} />
 
         </div>
 
