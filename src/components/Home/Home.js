@@ -11,7 +11,6 @@ import PointerTitleIcon from '../../assets/Titles/ico-02.png';
 import TimerTitleIcon from '../../assets/Titles/ico-03.png';
 
 import * as API_Functions from '../../API/API_Functions';
-import * as API_Constants from '../../API/API_Constants';
 import { useToasts } from 'react-toast-notifications';
 
 const Home = (props) => {
@@ -53,16 +52,7 @@ const Home = (props) => {
 
     const onSubmitButtonHandler = () => {
 
-        let requiredDataToPost = {
-
-            pin: userPIN,
-            ride_id: chosenCardRideID, 
-            token: API_Constants.API_KEY
-        };
-
-        console.log(requiredDataToPost);
-
-        API_Functions.postChosenRide(requiredDataToPost)
+        API_Functions.postChosenRide(userPIN, chosenCardRideID)
 
             .then(response => {
 
