@@ -33,7 +33,7 @@ const HomeCard = (props) => {
                 <h3 className={styles.Time}>
 
                     <CardIcon iconSource={TimeCardIcon} />
-                    {modifiedTimeString ? { modifiedTimeString } : "loading..."}
+                    {modifiedTimeString ? modifiedTimeString : "loading..."}
 
                 </h3>
 
