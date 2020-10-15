@@ -4,8 +4,8 @@ import styles from './App.module.css';
 import { Route, Switch } from 'react-router-dom';
 
 import Header from '../UI/Header/Header';
-import Home from '../Home/Home';
-import AccessCode from '../AccessCode/AccessCode';
+import Home from '../Pages/Home/Home';
+import AccessCodes from '../Pages/AccessCodes/AccessCodes';
 
 import { ToastProvider } from 'react-toast-notifications';
 
@@ -22,7 +22,7 @@ function App() {
 
         <ToastProvider>
 
-          <Route path="/access-codes" component={AccessCode} />
+          <Route path="/access-codes" component={AccessCodes} />
           <Route exact path="/" component={Home} />
           
         </ToastProvider>

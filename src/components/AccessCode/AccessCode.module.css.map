@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,IAAI;CACjB",
-    "sources": [
-        "AccessCode.module.scss"
-    ],
-    "names": [],
-    "file": "AccessCode.module.css"
-}

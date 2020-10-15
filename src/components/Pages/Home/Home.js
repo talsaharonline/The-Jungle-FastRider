@@ -5,19 +5,19 @@ import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
 
-import Title from '../UI/Title/Title/Title';
-import Input from '../UI/Input/Input';
-import HomeCard from '../UI/Cards/HomeCard/HomeCard';
-import Button from '../UI/Button/Button';
-import Loader from '../UI/Loader/Loader';
+import Title from '../../UI/Title/Title/Title';
+import Input from '../../UI/Input/Input';
+import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
+import Button from '../../UI/Button/Button';
+import Loader from '../../UI/Loader/Loader';
 
-import TicketTitleIcon from '../../assets/Titles/ico-01.png';
-import PointerTitleIcon from '../../assets/Titles/ico-02.png';
-import TimerTitleIcon from '../../assets/Titles/ico-03.png';
+import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
+import PointerTitleIcon from '../../../assets/Titles/ico-02.png';
+import TimerTitleIcon from '../../../assets/Titles/ico-03.png';
 
-import * as API_Functions from '../../API/API_Functions';
-import * as API_PIN_Generator from '../../API/API_PIN_Generator';
-import * as actionTypes from '../../store/actions';
+import * as API_Functions from '../../../API/API_Functions';
+import * as API_PIN_Generator from '../../../API/API_PIN_Generator';
+import * as actionTypes from '../../../store/actions';
 
 const Home = (props) => {
 
@@ -28,7 +28,7 @@ const Home = (props) => {
     const [userPIN, setUserPIN] = useState([]);
     const [chosenCardRideID, setChosenCardRideID] = useState([]);
     const [accessData, setAccessData] = useState([]);
-    const [redirectToAccessCode, setRedirectToAccessCode] = useState([]);
+    const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
     const [savedUserPin, setSavedUserPin] = useState("");
 
 
@@ -131,7 +131,7 @@ const Home = (props) => {
 
             props.updateAccessData(accessData);
 
-            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-codes" }} />)
+            setRedirectToAccessCodes(<Redirect to={{ pathname: "/access-codes" }} />)
 
         }
 
@@ -142,7 +142,7 @@ const Home = (props) => {
 
         <div className={styles.Home}>
 
-            {redirectToAccessCode ? redirectToAccessCode : null}
+            {redirectToAccessCodes ? redirectToAccessCodes : null}
 
             <Title iconSource={TicketTitleIcon}>
 

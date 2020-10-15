@@ -1,28 +1,36 @@
 @import "../../../design-tokens/scss-variables";
 
 .Header {
-  width: 100%;
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 1rem 8rem;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 
   .Title {
     vertical-align: middle;
     color: $secondary-text-color;
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: bold;
+  }
+
+  .mobileMenu {
+    display: none;
+    color: $secondary-text-color;
   }
 
   .NavLink {
     color: $navlink-color;
+    font-size: 0.9rem;
+    font-weight: bold;
     text-decoration: none;
+
     &:hover {
       color: $secondary-text-color;
     }
@@ -41,7 +49,7 @@
 // Mobile Devices
 @media only screen and (max-width: 48rem) {
   .Header {
-    padding: 1rem 1.5rem;
+    padding: 1.3rem 1.5rem;
 
     .mobileMenu {
       display: inline-block;

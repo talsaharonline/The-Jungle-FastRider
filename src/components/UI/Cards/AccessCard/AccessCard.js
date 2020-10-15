@@ -21,10 +21,12 @@ const AccessCard = (props) => {
 
         <div className={styles.AccessCard}>
 
-            <div className={styles.Header}>
+            <div className={styles.Header}> {/* dont forget to change border color dynamicaly */}
 
                 <h3 className={styles.Playground}>
+
                     {props.data.length ? props.data[0].ride.name : "loading..."}
+
                 </h3>
 
                 <h3 className={styles.ParkName}>

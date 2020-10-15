@@ -1,4 +1,4 @@
-.AccessCode {
+.AccessCodes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,6 +6,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
-/*# sourceMappingURL=AccessCode.module.css.map */
+/*# sourceMappingURL=AccessCodes.module.css.map */
