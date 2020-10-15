@@ -1,0 +1,12 @@
+.LogoContainer {
+  height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.LogoContainer .Logo {
+  height: 100%;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Logo.module.css.map */

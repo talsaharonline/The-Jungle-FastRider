@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,MAAM;CAMvB;;AATD,AAIE,cAJY,CAIZ,KAAK,CAAC;EACJ,MAAM,EAAE,IAAI;EACZ,YAAY,EAAE,IAAI;EAClB,MAAM,EAAE,OAAO;CAChB",
+    "sources": [
+        "Logo.module.scss"
+    ],
+    "names": [],
+    "file": "Logo.module.css"
+}

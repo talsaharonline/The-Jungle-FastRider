@@ -11,6 +11,7 @@
   border: none;
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
+  z-index: 3;
 }
 
 .Button:focus {

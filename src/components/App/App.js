@@ -22,7 +22,7 @@ function App() {
 
         <ToastProvider>
 
-          <Route path="/access-code" component={AccessCode} />
+          <Route path="/access-codes" component={AccessCode} />
           <Route exact path="/" component={Home} />
           
         </ToastProvider>

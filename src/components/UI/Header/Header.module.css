@@ -1,8 +1,60 @@
 .Header {
-  margin-top: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 8rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .Header .Title {
-  color: #ffffff;
+  vertical-align: middle;
+  color: #e9e9e9;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.Header .NavLink {
+  color: #b9b9b9;
+  text-decoration: none;
+}
+
+.Header .NavLink:hover {
+  color: #e9e9e9;
+}
+
+.Header li {
+  display: inline-block;
+  margin-left: 3.5rem;
+}
+
+@media only screen and (max-width: 48rem) {
+  .Header {
+    padding: 1rem 1.5rem;
+  }
+  .Header .mobileMenu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .Header .menuBtnContainer {
+    padding: 0 !important;
+  }
+  .Header li {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Header.module.css.map */

@@ -1,7 +1,63 @@
+@import "../../../design-tokens/scss-variables";
+
 .Header {
-  margin-top: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 8rem;
+  align-items: center;
+
   .Title {
-    color: #ffffff;
-    font-size: ;
+    vertical-align: middle;
+    color: $secondary-text-color;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .NavLink {
+    color: $navlink-color;
+    text-decoration: none;
+    &:hover {
+      color: $secondary-text-color;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 3.5rem;
+  }
+}
+
+
+// ---------- Media Queries ----------
+// -----------------------------------
+
+// Mobile Devices
+@media only screen and (max-width: 48rem) {
+  .Header {
+    padding: 1rem 1.5rem;
+
+    .mobileMenu {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .menuBtnContainer {
+      padding: 0 !important;
+    }
+
+    li {
+      display: none;
+    }
+
+    // .Title {
+      // font-size: 1rem;
+    // }
   }
 }

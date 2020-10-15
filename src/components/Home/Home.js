@@ -29,7 +29,7 @@ const Home = (props) => {
     const [chosenCardRideID, setChosenCardRideID] = useState([]);
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCode, setRedirectToAccessCode] = useState([]);
-    // const [toggleLoader, setToggleLoader] = useState(false);
+    const [savedUserPin, setSavedUserPin] = useState("");
 
 
     const scrollPositionHandler = () => {
@@ -72,13 +72,14 @@ const Home = (props) => {
 
         scrollEventHandler();
 
-        // setToggleLoader(true);
-
         API_Functions.getFastRiderRides()
 
             .then(response => {
 
-                // setToggleLoader(false);
+                if (localStorage.getItem("userPIN")) {
+                    setSavedUserPin(JSON.parse(localStorage.getItem("userPIN")));
+                }
+
                 setFastRiderRides(response);
 
             }).catch(error => {
@@ -112,6 +113,8 @@ const Home = (props) => {
 
                 setAccessData([response]);
 
+                localStorage.setItem("userPIN", JSON.stringify(userPIN));
+
                 // toggleLoader(true)
 
             }).catch(error => {
@@ -128,7 +131,7 @@ const Home = (props) => {
 
             props.updateAccessData(accessData);
 
-            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code" }} />)
+            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-codes" }} />)
 
         }
 
@@ -165,6 +168,7 @@ const Home = (props) => {
 
             <Input
                 onChangeHandler={onChangeInputHandler}
+                inputDynamicValue={savedUserPin}
             />
 
             <div className={styles.Cards}>

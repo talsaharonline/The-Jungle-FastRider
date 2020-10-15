@@ -1,0 +1,10 @@
+.LogoContainer {
+  height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+  .Logo {
+    height: 100%;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}

@@ -9,6 +9,7 @@ const Input = (props) => {
             className={styles.Input}
             placeholder="#PIN"
             onChange={props.onChangeHandler}
+            defaultValue={props.inputDynamicValue}
         />
 
     );

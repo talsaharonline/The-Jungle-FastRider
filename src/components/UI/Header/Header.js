@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Logo from '../Logo/Logo';
 import styles from './Header.module.css';
+
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -7,7 +10,25 @@ const Header = () => {
 
         <header className={styles.Header}>
 
-            <h2 className={styles.Title}>The Jungle™ FastRider Service</h2>
+            <div>
+                <a className={styles.Title} href="/"><Logo />The Jungle™ FastRider</a>
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <NavLink className={styles.NavLink} activeStyle={{ color: '#edf0f1' }} to="/" exact>Home</NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink className={styles.NavLink} activeStyle={{ color: '#edf0f1' }} to="/access-codes">Access Codes</NavLink>
+                    </li>
+
+                </ul>
+
+            </nav>
 
         </header>
     )
