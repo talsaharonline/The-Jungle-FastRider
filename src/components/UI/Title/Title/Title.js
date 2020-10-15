@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from './Title.module.css';
+import Animations from '../../Animations/Animations.module.css';
 
 import TitleIcon from '../TitleIcon/TitleIcon';
 
-const Title = (props) => {
+const Title = (props) => (
 
-    return (
+    <div
+        className={[styles.Title, Animations.FadeIn].join(' ')}
+        style={{ animationDelay: props.animationDelayTime }}>
 
-        <div className={styles.Title}>
+        <TitleIcon iconSource={props.iconSource} />
+        <p className={styles.Text}>{props.children}</p>
 
-            <TitleIcon iconSource={props.iconSource}/>
-            <p className={styles.Text}>{props.children}</p>
-            
-        </div>
+    </div>
 
-    )
 
-};
+);
 
 export default Title;

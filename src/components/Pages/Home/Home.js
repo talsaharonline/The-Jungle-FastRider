@@ -10,6 +10,7 @@ import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
 import Loader from '../../UI/Loader/Loader';
+import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../../assets/Titles/ico-02.png';
@@ -155,7 +156,7 @@ const Home = (props) => {
 
             {redirectToAccessCodes ? redirectToAccessCodes : null}
 
-            <Title iconSource={TicketTitleIcon}>
+            <Title animationDelayTime={'0.3s'} iconSource={TicketTitleIcon}>
 
                 Enter your park ticket #PIN number,
                 then select the desired ride while
@@ -163,13 +164,13 @@ const Home = (props) => {
 
             </Title>
 
-            <Title iconSource={PointerTitleIcon}>
+            <Title animationDelayTime={'0.6s'} iconSource={PointerTitleIcon}>
 
                 Press 'submit' to confirm and retrieve your access code
 
             </Title>
 
-            <Title iconSource={TimerTitleIcon}>
+            <Title animationDelayTime={'0.9s'} iconSource={TimerTitleIcon}>
 
                 When the time comes, use the spacial
                 FastRider line to cut out a considerable
