@@ -83,7 +83,7 @@ const Home = (props) => {
 
             }).catch(error => {
 
-                addToast(error.message, { appearance: 'error' });
+                addToast(error.message, { appearance: 'error', autoDismiss: true });
 
             });
 
@@ -123,13 +123,13 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    addToast(error.message, { appearance: 'error' });
+                    addToast(error.message, { appearance: 'error', autoDismiss: true });
 
                 });
 
         } else {
 
-            addToast("Please choose playground and enter your PIN code.", { appearance: 'error',  autoDismiss: true, });
+            addToast("Please choose playground and enter your PIN code.", { appearance: 'error', autoDismiss: true });
         }
 
 
