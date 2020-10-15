@@ -7,6 +7,7 @@ import Title from '../../UI/Title/Title/Title';
 import AccessCard from '../../UI/Cards/AccessCard/AccessCard';
 
 import AccessTitleIcon from '../../../assets/Titles/ico-04.png';
+import Logo from '../../UI/Logo/Logo';
 
 const AccessCodes = (props) => {
 
@@ -21,7 +22,7 @@ const AccessCodes = (props) => {
 
             </Title>
 
-            {props.accessData ? <AccessCard data={props.accessData} /> : "loading..."}
+            {props.accessData ? <AccessCard data={props.accessData} /> : <Logo />}
 
         </div>
 

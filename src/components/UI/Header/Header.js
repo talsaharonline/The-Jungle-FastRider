@@ -30,7 +30,14 @@ const Header = () => {
         <header className={styles.Header}>
 
             <div>
-                <a className={styles.Title} href="/"><Logo />The Jungle™ FastRider</a>
+
+                <NavLink className={styles.Title} to="/" exact>
+
+                    <Logo />
+                    The Jungle™ FastRider
+
+                </NavLink>
+
             </div>
 
             <nav>

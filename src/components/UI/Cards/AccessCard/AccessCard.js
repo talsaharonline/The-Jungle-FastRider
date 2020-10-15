@@ -5,6 +5,8 @@ import styles from './AccessCard.module.css';
 const AccessCard = (props) => {
 
     const [modifiedTimeString, setModifiedTimeString] = useState("");
+    const [dynamicCardBorderTopColor, setDynamicCardBorderTopColor] = useState({});
+
 
     useEffect(() => {
 
@@ -14,12 +16,22 @@ const AccessCard = (props) => {
 
         };
 
+        setDynamicCardBorderTopColor({
+
+            borderTop: '0.4rem solid',
+            borderTopColor: props.data[0].ride.zone.color
+
+        });
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
 
-        <div className={styles.AccessCard}>
+        <div
+            className={styles.AccessCard}
+            style={dynamicCardBorderTopColor}
+        >
 
             <div className={styles.Header}> {/* dont forget to change border color dynamicaly */}
 

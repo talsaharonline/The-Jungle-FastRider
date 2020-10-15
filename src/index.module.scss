@@ -8,12 +8,12 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   overflow-x: hidden;
   background: #232323;
   background-size: cover;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Open Sans", sans-serif;
 }
