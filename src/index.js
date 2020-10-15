@@ -10,8 +10,11 @@ import { createStore } from 'redux';
 
 import reducer from './store/reducer';
 
+// localStorage.clear();
 
-let initialState = {};
+let initialState = localStorage.getItem("accessData")
+  ? JSON.parse(localStorage.getItem("accessData"))
+  : { accessData: {} };
 
 const store = createStore(reducer, initialState);
 

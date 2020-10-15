@@ -1,86 +1,85 @@
 
+let newModifiedArray = [];
+
 export const generatePIN = () => {
 
-    // Create a random 4 digit numbers
+    // Creates a random 4 digit numbers
     let firstFourDigitNumber = Math.floor(1000 + Math.random() * 9000);
     let secondFourDigitNumber = Math.floor(1000 + Math.random() * 9000);
 
-    let PIN = "JN-" + firstFourDigitNumber + "-" + secondFourDigitNumber + "-" + convertToASCII(firstFourDigitNumber) + convertToASCII(secondFourDigitNumber);
+    let firstLetter = convertNumberToASCIILetter(firstFourDigitNumber);
+    let secondLetter = convertNumberToASCIILetter(secondFourDigitNumber);
+
+    let PIN = "JN-" + firstFourDigitNumber + "-" + secondFourDigitNumber + "-" + firstLetter + secondLetter;
 
     console.log(PIN);
 
 };
 
-
-
-const convertToASCII = (fourDigitNumber) => {
+const convertNumberToASCIILetter = (fourDigitNumber) => {
 
     // Split the number into array of digits
     let splittedNumberArray = Array.from(fourDigitNumber.toString()).map(Number);
+    let newMultipliedNumber = 0;
 
-    let modifiedArray = [];
-    let sum = 0;
+    newModifiedArray = [];
 
+    // Check number location and calculate accordingly
     for (let i = 0; i < splittedNumberArray.length; i++) {
 
-        if (i === 1 || i === 3) {
+        if (i % 2 === 0) {
 
-            sum = splittedNumberArray[i] * 2;
+            newMultipliedNumber = splittedNumberArray[i] * 1;
 
-            if (sum.length <= 1) {
+            checkIfTwoDigitNumber(newMultipliedNumber);
 
-                modifiedArray.push(sum);
+        } else {
 
-            } else {
+            newMultipliedNumber = splittedNumberArray[i] * 2;
 
-                let twoDigitsSumArray = Array.from(sum.toString()).map(Number);
-                let finalSum = 0;
-
-                for (let i = 0; i < twoDigitsSumArray.length; i++) {
-                    finalSum += twoDigitsSumArray[i];
-                }
-
-                modifiedArray.push(finalSum);
-
-            }
-
-        } else if (i === 0 || i === 2)  {
-
-            sum = splittedNumberArray[i] * 1;
-
-            if (sum.length <= 1) {
-
-                modifiedArray.push(sum);
-
-            } else {
-
-                let twoDigitsSumArray = Array.from(sum.toString()).map(Number);
-                let finalSum = 0;
-
-                for (let i = 0; i < twoDigitsSumArray.length; i++) {
-                    finalSum += twoDigitsSumArray[i];
-                }
-
-                modifiedArray.push(finalSum);
-
-            }
+            checkIfTwoDigitNumber(newMultipliedNumber);
 
         }
 
     }
 
-    // sum all array numbers
-    let finalSumFinal1 = 0;
-    for (let i = 0; i < modifiedArray.length; i++) {
-        finalSumFinal1 += modifiedArray[i];
+    let sumModifiedNumbers = 0;
+
+    // Sum all array numbers
+    for (let i = 0; i < newModifiedArray.length; i++) {
+
+        sumModifiedNumbers += newModifiedArray[i];
 
     }
 
-    // Preperation befor ASCII
-    finalSumFinal1 = (finalSumFinal1 % 26) + 65;
+    // Preperation before ASCII
+    sumModifiedNumbers = (sumModifiedNumbers % 26) + 65;
 
-    //ACSII conversion
-    let finalLetter = String.fromCharCode(finalSumFinal1);
+    // ACSII conversion
+    let finalLetter = String.fromCharCode(sumModifiedNumbers);
 
     return finalLetter;
-}
+
+};
+
+
+const checkIfTwoDigitNumber = (newMultipliedNumber) => {
+
+    if (newMultipliedNumber.length <= 1) {
+
+        newModifiedArray.push(newMultipliedNumber);
+
+    } else {
+
+        let twoDigitNumberSumArray = Array.from(newMultipliedNumber.toString()).map(Number);
+        let newTwoDigitSumNumber = 0;
+
+        for (let i = 0; i < twoDigitNumberSumArray.length; i++) {
+            newTwoDigitSumNumber += twoDigitNumberSumArray[i];
+        }
+
+        newModifiedArray.push(newTwoDigitSumNumber);
+
+    }
+
+};

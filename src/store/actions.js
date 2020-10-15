@@ -1,0 +1,1 @@
+export const UPDATE_ACCESS_DATA = 'UPDATE_ACCESS_DATA';

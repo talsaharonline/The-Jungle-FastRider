@@ -10,6 +10,7 @@
   font-weight: bold;
   border: none;
   font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 }
 
 .Button:focus {

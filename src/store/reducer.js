@@ -1,17 +1,19 @@
-// import * as actionTypes from './actions';
+import * as actionTypes from './actions';
 
 const reducer = (state, action) => {
 
-    // switch (key) {
+    switch (action.type) {
 
-    //     case value:
+        case actionTypes.UPDATE_ACCESS_DATA:
 
-    //         break;
+            localStorage.setItem("accessData", JSON.stringify(action.data));
+            return action.data;
 
-    //     default:
-    //         return state;
+        default:
 
-    // }
+            return state;
+
+    }
 
 
 };

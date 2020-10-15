@@ -14,6 +14,7 @@
   margin: 0.4rem;
   padding: 0.5rem;
   background: #373737;
+  cursor: pointer;
 }
 
 .HomeCard .ZoneName,
@@ -41,7 +42,8 @@
   padding: 0 0.4rem;
 }
 
-.HomeCard .Time, .HomeCard .Tickets {
+.HomeCard .Time,
+.HomeCard .Tickets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

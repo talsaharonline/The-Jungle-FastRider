@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
+
 import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
 
 import Title from '../UI/Title/Title/Title';
 import Input from '../UI/Input/Input';
 import HomeCard from '../UI/Cards/HomeCard/HomeCard';
 import Button from '../UI/Button/Button';
+import Loader from '../UI/Loader/Loader';
 
 import TicketTitleIcon from '../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../assets/Titles/ico-02.png';
@@ -13,7 +17,7 @@ import TimerTitleIcon from '../../assets/Titles/ico-03.png';
 
 import * as API_Functions from '../../API/API_Functions';
 import * as API_PIN_Generator from '../../API/API_PIN_Generator';
-import { useToasts } from 'react-toast-notifications';
+import * as actionTypes from '../../store/actions';
 
 const Home = (props) => {
 
@@ -25,6 +29,7 @@ const Home = (props) => {
     const [chosenCardRideID, setChosenCardRideID] = useState([]);
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCode, setRedirectToAccessCode] = useState([]);
+    // const [toggleLoader, setToggleLoader] = useState(false);
 
 
     const scrollPositionHandler = () => {
@@ -67,10 +72,13 @@ const Home = (props) => {
 
         scrollEventHandler();
 
+        // setToggleLoader(true);
+
         API_Functions.getFastRiderRides()
 
             .then(response => {
 
+                // setToggleLoader(false);
                 setFastRiderRides(response);
 
             }).catch(error => {
@@ -104,7 +112,7 @@ const Home = (props) => {
 
                 setAccessData([response]);
 
-                // loader
+                // toggleLoader(true)
 
             }).catch(error => {
 
@@ -118,11 +126,13 @@ const Home = (props) => {
 
         if (accessData.length > 0) {
 
-            console.log("im in!");
-            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code", state: { accessData: accessData } }} />)
+            props.updateAccessData(accessData);
+
+            setRedirectToAccessCode(<Redirect to={{ pathname: "/access-code" }} />)
 
         }
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [accessData])
 
     return (
@@ -174,7 +184,7 @@ const Home = (props) => {
 
                     />
 
-                )) : "loading..."}
+                )) : <Loader />}
 
             </div>
 
@@ -191,4 +201,19 @@ const Home = (props) => {
 
 };
 
-export default Home;
+const mapDispatchToProps = dispatch => {
+
+    return {
+
+        updateAccessData: (accessData) => dispatch({
+
+            type: actionTypes.UPDATE_ACCESS_DATA,
+            data: { accessData: accessData }
+
+        })
+
+    };
+
+};
+
+export default connect(null, mapDispatchToProps)(Home);

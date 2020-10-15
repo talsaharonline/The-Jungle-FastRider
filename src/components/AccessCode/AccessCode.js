@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './AccessCode.module.css';
 
+import { connect } from 'react-redux';
+
 import Title from '../UI/Title/Title/Title';
 import AccessCard from '../UI/Cards/AccessCard/AccessCard';
 
@@ -19,7 +21,7 @@ const AccessCode = (props) => {
 
             </Title>
 
-            {props.location.state.accessData ? <AccessCard data={props.location.state.accessData} /> : "loading..."}
+            {props.accessData ? <AccessCard data={props.accessData} /> : "loading..."}
 
         </div>
 
@@ -28,4 +30,14 @@ const AccessCode = (props) => {
 
 };
 
-export default AccessCode;
+const mapStateToProps = state => {
+
+    return {
+
+        accessData: state.accessData
+
+    };
+
+};
+
+export default connect(mapStateToProps, null)(AccessCode);
