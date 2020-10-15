@@ -10,7 +10,6 @@ import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
 import Loader from '../../UI/Loader/Loader';
-import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../../assets/Titles/ico-02.png';
@@ -156,32 +155,50 @@ const Home = (props) => {
 
             {redirectToAccessCodes ? redirectToAccessCodes : null}
 
-            <Title animationDelayTime={'0.3s'} iconSource={TicketTitleIcon}>
+            <div className={styles.Titles}>
 
-                Enter your park ticket #PIN number,
-                then select the desired ride while
-                noting the stated return time
+                <Title animationDelayTime={'0.3s'} iconSource={TicketTitleIcon}>
 
-            </Title>
+                    Enter your park ticket #PIN number,
+                    then select the desired ride while
+                    noting the stated return time
 
-            <Title animationDelayTime={'0.6s'} iconSource={PointerTitleIcon}>
+                </Title>
 
-                Press 'submit' to confirm and retrieve your access code
+                <Title animationDelayTime={'0.6s'} iconSource={PointerTitleIcon}>
 
-            </Title>
+                    Press 'submit' to confirm and retrieve your access code
 
-            <Title animationDelayTime={'0.9s'} iconSource={TimerTitleIcon}>
+                </Title>
 
-                When the time comes, use the spacial
-                FastRider line to cut out a considerable
-                wait time
+                <Title animationDelayTime={'0.9s'} iconSource={TimerTitleIcon}>
 
-            </Title>
+                    When the time comes, use the spacial
+                    FastRider line to cut out a considerable
+                    wait time
 
-            <Input
-                onChangeHandler={onChangeInputHandler}
-                inputDynamicValue={userPIN}
-            />
+                </Title>
+
+            </div>
+
+            <div className={styles.InputAndBtnContainer}>
+
+                <Input
+                    onChangeHandler={onChangeInputHandler}
+                    inputDynamicValue={userPIN}
+                />
+
+
+                <Button
+                    onClickHandler={onSubmitButtonHandler}
+                    visibility={displayButton}
+                >
+                    SUBMIT
+                </Button>
+
+            </div>
+
+
 
             <div className={styles.Cards}>
 
@@ -204,12 +221,6 @@ const Home = (props) => {
 
             </div>
 
-            <Button
-                onClickHandler={onSubmitButtonHandler}
-                visibility={displayButton}
-            >
-                SUBMIT
-            </Button>
 
         </div >
 

@@ -1,7 +1,25 @@
 .Title {
-    margin: 1rem auto;
-    width: 17rem;
+  margin: 1rem auto;
+  width: 17rem;
   .Text {
     color: #656565;
+    font-weight: bold;
   }
 }
+
+// ---------- Media Queries ----------
+// -----------------------------------
+
+// Regular Desktop Screen and Above
+@media only screen and (min-width: 48rem) {
+    .Title{
+      margin: 0 1.2rem;
+    }
+
+}
+
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
+}
+
+

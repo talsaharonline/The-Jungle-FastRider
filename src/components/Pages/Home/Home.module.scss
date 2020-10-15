@@ -1,7 +1,11 @@
 .Home {
-  display: flex;
-  flex-direction: column;
+  display: block;
   margin-top: 5rem;
+
+  .Titles {
+    display: flex;
+    flex-direction: column;
+  }
 
   .Cards {
     margin: 0 auto;
@@ -10,4 +14,35 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+// ---------- Media Queries ----------
+// -----------------------------------
+
+// Regular Desktop Screen and Above
+@media only screen and (min-width: 48rem) {
+  .Home {
+    margin-top: 8rem;
+    .Titles {
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
+    .InputAndBtnContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: 60rem;
+    }
+
+    .Cards {
+      width: 60rem;
+    }
+  }
+}
+
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
 }

@@ -20,3 +20,21 @@
   }
 }
 
+// ---------- Media Queries ----------
+// -----------------------------------
+
+// dont forget hover effect on button
+// cancel fadein/fadeout effect on desktop
+
+// Regular Desktop Screen and Above
+@media only screen and (min-width: 48rem) {
+  .Button {
+    position: static;
+    width: 10rem;
+    height: 3.5rem;
+  }
+}
+
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
+}

@@ -37,4 +37,16 @@
   }
 }
 
-// if on desktop: make hover effect on cards
+// ---------- Media Queries ----------
+// -----------------------------------
+
+// Regular Desktop Screen and Above
+@media only screen and (min-width: 48rem) {
+  // .HomeCard:hover {
+    // box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.2);
+  // }
+}
+
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
+}

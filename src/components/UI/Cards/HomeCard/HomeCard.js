@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomeCard.module.css';
-import CardIcon from '../CardIcon/CardIcon';
+import Animtaions from '../../Animations/Animations.module.css';
 
+import CardIcon from '../CardIcon/CardIcon';
 import TimeCardIcon from '../../../../assets/Cards/ico-g-03.png';
 import TicketsCardIcon from '../../../../assets/Cards/ico-g-01.png';
 
@@ -10,7 +11,7 @@ const HomeCard = (props) => {
 
     const [modifiedTimeString, setModifiedTimeString] = useState("");
     const [dynamicCardBackgroundColor, setDynamicCardBackgroundColor] = useState({});
-    const [checkIfCardClicked, setCheckIfCardClicked] = useState({isClicked: false});
+    const [checkIfCardClicked, setCheckIfCardClicked] = useState({ isClicked: false });
 
     useEffect(() => {
 
@@ -36,7 +37,7 @@ const HomeCard = (props) => {
             });
 
         } else {
-            
+
             setCheckIfCardClicked({
 
                 isClicked: true
@@ -51,7 +52,7 @@ const HomeCard = (props) => {
             setDynamicCardBackgroundColor({
 
                 borderTop: '0.4rem solid',
-                borderTopColor: cardColor, 
+                borderTopColor: cardColor,
                 backgroundColor: '#373737'
 
             });
@@ -71,7 +72,7 @@ const HomeCard = (props) => {
     return (
 
         <div
-            className={styles.HomeCard}
+            className={[styles.HomeCard, Animtaions.FadeInUp].join(' ')}
             style={dynamicCardBackgroundColor}
             onClick={() => {
 

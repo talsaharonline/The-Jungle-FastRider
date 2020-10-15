@@ -5,5 +5,12 @@
 
 .Title .Text {
   color: #656565;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 48rem) {
+  .Title {
+    margin: 0 1.2rem;
+  }
 }
 /*# sourceMappingURL=Title.module.css.map */
