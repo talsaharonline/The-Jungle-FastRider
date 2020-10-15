@@ -26,10 +26,9 @@ const Home = (props) => {
     const [displayButton, setDisplayButton] = useState(false);
     const [fastRiderRides, setFastRiderRides] = useState([]);
     const [userPIN, setUserPIN] = useState([]);
-    const [chosenCardRideID, setChosenCardRideID] = useState([]);
+    const [chosenCardRideID, setChosenCardRideID] = useState(0);
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
-    const [savedUserPin, setSavedUserPin] = useState("");
 
 
     const scrollPositionHandler = () => {
@@ -77,7 +76,7 @@ const Home = (props) => {
             .then(response => {
 
                 if (localStorage.getItem("userPIN")) {
-                    setSavedUserPin(JSON.parse(localStorage.getItem("userPIN")));
+                    setUserPIN(JSON.parse(localStorage.getItem("userPIN")));
                 }
 
                 setFastRiderRides(response);
@@ -107,21 +106,33 @@ const Home = (props) => {
 
     const onSubmitButtonHandler = () => {
 
-        API_Functions.postChosenRide(userPIN, chosenCardRideID)
+        console.log(userPIN);
+        console.log(chosenCardRideID);
 
-            .then(response => {
+        if (userPIN && chosenCardRideID) {
 
-                setAccessData([response]);
+            API_Functions.postChosenRide(userPIN, chosenCardRideID)
 
-                localStorage.setItem("userPIN", JSON.stringify(userPIN));
+                .then(response => {
 
-                // toggleLoader(true)
+                    setAccessData([response]);
 
-            }).catch(error => {
+                    localStorage.setItem("userPIN", JSON.stringify(userPIN));
 
-                addToast(error.message, { appearance: 'error' });
+                    // toggleLoader(true)
 
-            });
+                }).catch(error => {
+
+                    addToast(error.message, { appearance: 'error' });
+
+                });
+
+        } else {
+
+            addToast("Please choose playground and enter your PIN code.", { appearance: 'error',  autoDismiss: true, });
+        }
+
+
 
     };
 
@@ -168,7 +179,7 @@ const Home = (props) => {
 
             <Input
                 onChangeHandler={onChangeInputHandler}
-                inputDynamicValue={savedUserPin}
+                inputDynamicValue={userPIN}
             />
 
             <div className={styles.Cards}>
