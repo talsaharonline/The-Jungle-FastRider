@@ -5,6 +5,11 @@
   flex-direction: column;
   margin-top: 5rem;
 
+  .Titles {
+    display: flex;
+    flex-direction: column;
+  }
+
   .NoCodesContainer {
     display: flex;
     flex-direction: column;
@@ -33,6 +38,11 @@
 // Regular Desktop Screen and Above
 @media only screen and (min-width: 48rem) {
   .AccessCodes {
+    .Titles {
+      width: 50rem;
+      margin: 3rem auto;
+    }
+
     .NoCodesContainer {
       .NoCodesMonkeyImg {
         width: 15%;

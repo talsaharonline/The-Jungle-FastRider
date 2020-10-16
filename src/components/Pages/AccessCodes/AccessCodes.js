@@ -32,12 +32,16 @@ const AccessCodes = (props) => {
 
                 ? <div>
 
-                    <Title animationDelayTime={'0.3s'} iconSource={AccessTitleIcon}>
+                    <div className={styles.Titles}>
 
-                        Thank you for using The Jungle™ FastRider ticket system -
-                        your access code is now ready!
+                        <Title animationDelayTime={'0.3s'} iconSource={AccessTitleIcon}>
 
-                    </Title>
+                            Thank you for using The Jungle™ FastRider ticket system -
+                            your access code is now ready!
+
+                        </Title>
+
+                    </div>
 
                     <AccessCard animationDelayTime={'0.6s'} data={props.accessData} />
 

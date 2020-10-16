@@ -43,7 +43,18 @@
       color: $secondary-text-color;
     }
   }
+}
+// ---------- Media Queries ----------
+// -----------------------------------
 
+// Regular Desktop Screen and Above
+@media only screen and (min-width: 48rem) {
+  .AccessCard {
+    width: 30rem;
+    padding: 0.8rem;
+  }
 }
 
-
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
+}
