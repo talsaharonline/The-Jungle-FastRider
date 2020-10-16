@@ -220,10 +220,7 @@ const Home = (props) => {
 
             </div>
 
-            <div
-                className={[styles.Cards, Animations.FadeIn].join(' ')}
-                style={{ animationDelay: '1.2s' }}
-            >
+            <div className={styles.Cards}>
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (
 

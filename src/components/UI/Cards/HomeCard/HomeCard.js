@@ -12,6 +12,31 @@ const HomeCard = (props) => {
     const [modifiedTimeString, setModifiedTimeString] = useState("");
     const [dynamicCardBackgroundColor, setDynamicCardBackgroundColor] = useState({});
     const [checkIfCardClicked, setCheckIfCardClicked] = useState({ isClicked: false });
+    const [cardHoverColor, setCardHoverColor] = useState(false);
+
+    useEffect(() => {
+
+        if (cardHoverColor) {
+
+            setDynamicCardBackgroundColor({
+
+                backgroundColor: props.cardColor
+
+            });
+
+        } else {
+
+            setDynamicCardBackgroundColor({
+
+                borderTop: '0.4rem solid',
+                borderTopColor: props.cardColor,
+                backgroundColor: '#373737'
+
+            });
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cardHoverColor]);
 
     useEffect(() => {
 
@@ -46,7 +71,6 @@ const HomeCard = (props) => {
 
         }
 
-
         if (!checkIfCardClicked.isClicked) {
 
             setDynamicCardBackgroundColor({
@@ -74,6 +98,8 @@ const HomeCard = (props) => {
         <div
             className={[styles.HomeCard, Animtaions.FadeInUp].join(' ')}
             style={dynamicCardBackgroundColor}
+            onMouseEnter={() => setCardHoverColor(true)}
+            onMouseLeave={() => setCardHoverColor(false)}
             onClick={() => {
 
                 changeCardBackgroundColor(props.cardColor);
@@ -102,7 +128,7 @@ const HomeCard = (props) => {
 
             </div>
 
-        </div >
+        </div>
 
     )
 
