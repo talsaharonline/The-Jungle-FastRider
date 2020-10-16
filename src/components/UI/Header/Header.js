@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 
 const Header = () => {
 
-    const MaterialClasses = useStyles();
+    const MaterialUIClasses = useStyles();
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -69,14 +69,14 @@ const Header = () => {
                     </Button>
 
                     <Menu
-                        className={MaterialClasses.mobileMenu}
+                        className={MaterialUIClasses.mobileMenu}
                         id="simple-menu"
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
                         onClose={mobileMenuCloseHandler}>
                         <MenuItem
-                            className={MaterialClasses.mobileMenuLink}
+                            className={MaterialUIClasses.mobileMenuLink}
                             onClick={mobileMenuCloseHandler}>
                             <NavLink style={{ textDecoration: 'none', color: '#b9b9b9' }}
                                 activeStyle={{ color: '#edf0f1' }} to="/" exact>
