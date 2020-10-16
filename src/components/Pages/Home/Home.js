@@ -10,6 +10,7 @@ import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
 import Loader from '../../UI/Loader/Loader';
+import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../../assets/Titles/ico-02.png';
@@ -100,6 +101,8 @@ const Home = (props) => {
 
     const onClickCardHandler = (rideID) => {
 
+        console.log(rideID);
+
         setChosenCardRideID(rideID);
 
     };
@@ -184,6 +187,7 @@ const Home = (props) => {
             <div className={styles.InputAndBtnContainer}>
 
                 <Input
+                    animationDelayTime={'1.2s'}
                     onChangeHandler={onChangeInputHandler}
                     inputDynamicValue={userPIN}
                 />
@@ -198,9 +202,10 @@ const Home = (props) => {
 
             </div>
 
-
-
-            <div className={styles.Cards}>
+            <div
+                className={[styles.Cards, Animations.FadeIn].join(' ')}
+                style={{ animationDelay: '1.5s' }}
+            >
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (
 

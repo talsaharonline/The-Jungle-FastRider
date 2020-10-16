@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,IAAI;CAEjB",
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,IAAI;CAqBjB;;AAxBD,AAKE,YALU,CAKV,iBAAiB,CAAC;EAChB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,IAAI;CAWjB;;AAvBH,AAcI,YAdQ,CAKV,iBAAiB,CASf,QAAQ,CAAC;EACP,WAAW,EAAE,OAAO;EACpB,KAAK,ECfY,OAAO;CDgBzB;;AAjBL,AAmBI,YAnBQ,CAKV,iBAAiB,CAcf,iBAAiB,CAAC;EAChB,KAAK,EAAE,GAAG;EACV,aAAa,EAAE,IAAI;CACpB",
     "sources": [
-        "AccessCodes.module.scss"
+        "AccessCodes.module.scss",
+        "../../../design-tokens/_scss-variables.scss"
     ],
     "names": [],
     "file": "AccessCodes.module.css"

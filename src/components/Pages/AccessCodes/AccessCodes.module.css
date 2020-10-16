@@ -8,4 +8,31 @@
           flex-direction: column;
   margin-top: 5rem;
 }
+
+.AccessCodes .NoCodesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80vw;
+  height: 50vh;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.AccessCodes .NoCodesContainer .Message {
+  font-weight: lighter;
+  color: #e9e9e9;
+}
+
+.AccessCodes .NoCodesContainer .NoCodesMonkeyImg {
+  width: 60%;
+  margin-bottom: 2rem;
+}
 /*# sourceMappingURL=AccessCodes.module.css.map */

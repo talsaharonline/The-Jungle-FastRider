@@ -1,6 +1,27 @@
+@import "../../../design-tokens/scss-variables";
+
 .AccessCodes {
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
 
+  .NoCodesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+    .Message {
+      font-weight: lighter;
+      color: $secondary-text-color;
+    }
+
+    .NoCodesMonkeyImg {
+      width: 60%;
+      margin-bottom: 2rem;
+    }
+  }
 }
