@@ -1,6 +1,6 @@
 .Title {
   margin: 1rem auto;
-  width: 17rem;
+  width: 15rem;
   .Text {
     color: #656565;
     font-weight: bold;
@@ -12,14 +12,12 @@
 
 // Regular Desktop Screen and Above
 @media only screen and (min-width: 48rem) {
-    .Title{
-      margin: 0 1.2rem;
-    }
-
+  .Title {
+    width: 14.6rem;
+    margin: 0 1.2rem;
+  }
 }
 
 // Larger Desktop Screens and Above
 @media only screen and (min-width: 120rem) {
 }
-
-

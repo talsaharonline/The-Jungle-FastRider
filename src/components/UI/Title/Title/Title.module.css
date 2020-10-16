@@ -1,6 +1,6 @@
 .Title {
   margin: 1rem auto;
-  width: 17rem;
+  width: 15rem;
 }
 
 .Title .Text {
@@ -10,6 +10,7 @@
 
 @media only screen and (min-width: 48rem) {
   .Title {
+    width: 14.6rem;
     margin: 0 1.2rem;
   }
 }

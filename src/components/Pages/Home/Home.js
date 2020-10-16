@@ -55,13 +55,21 @@ const Home = (props) => {
 
     useEffect(() => {
 
-        if (scrollPosition >= 0 && scrollPosition <= 300) {
+        if (window.screen.width < 768) {
 
-            setDisplayButton(true);
+            if (scrollPosition >= 0 && scrollPosition <= 300) {
+
+                setDisplayButton(true);
+
+            } else {
+
+                setDisplayButton(false);
+
+            }
 
         } else {
 
-            setDisplayButton(false);
+            setDisplayButton(true);
 
         }
 
@@ -70,6 +78,8 @@ const Home = (props) => {
 
 
     useEffect(() => {
+
+        // localStorage.clear();
 
         scrollEventHandler();
 
@@ -116,7 +126,7 @@ const Home = (props) => {
 
     const onSubmitButtonHandler = () => {
 
-      console.log(inputValue);
+        console.log(inputValue);
 
         if (inputValue && chosenCardRideID) {
 
@@ -174,13 +184,13 @@ const Home = (props) => {
 
                 </Title>
 
-                <Title animationDelayTime={'0.6s'} iconSource={PointerTitleIcon}>
+                <Title animationDelayTime={'0.5s'} iconSource={PointerTitleIcon}>
 
                     Press 'submit' to confirm and retrieve your access code
 
                 </Title>
 
-                <Title animationDelayTime={'0.9s'} iconSource={TimerTitleIcon}>
+                <Title animationDelayTime={'0.7s'} iconSource={TimerTitleIcon}>
 
                     When the time comes, use the spacial
                     FastRider line to cut out a considerable
@@ -193,7 +203,7 @@ const Home = (props) => {
             <div className={styles.InputAndBtnContainer}>
 
                 <Input
-                    animationDelayTime={'1.2s'}
+                    animationDelayTime={'0.9s'}
                     onChangeHandler={onChangeInputHandler}
                     onSelectHandler={onAutoCompleteSelectHandler}
                     inputValue={inputValue}
@@ -212,7 +222,7 @@ const Home = (props) => {
 
             <div
                 className={[styles.Cards, Animations.FadeIn].join(' ')}
-                style={{ animationDelay: '1.5s' }}
+                style={{ animationDelay: '1.2s' }}
             >
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (

@@ -32,7 +32,15 @@
 }
 
 .AccessCodes .NoCodesContainer .NoCodesMonkeyImg {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 60%;
   margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 48rem) {
+  .AccessCodes .NoCodesContainer .NoCodesMonkeyImg {
+    width: 15%;
+  }
 }
 /*# sourceMappingURL=AccessCodes.module.css.map */
