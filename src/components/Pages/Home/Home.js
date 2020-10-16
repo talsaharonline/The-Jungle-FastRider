@@ -26,7 +26,8 @@ const Home = (props) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [displayButton, setDisplayButton] = useState(false);
     const [fastRiderRides, setFastRiderRides] = useState([]);
-    const [userPIN, setUserPIN] = useState([]);
+    const [inputValue, setInputValue] = useState("");
+    const [savedUserPIN, setSavedUserPIN] = useState("");
     const [chosenCardRideID, setChosenCardRideID] = useState(0);
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
@@ -77,7 +78,7 @@ const Home = (props) => {
             .then(response => {
 
                 if (localStorage.getItem("userPIN")) {
-                    setUserPIN(JSON.parse(localStorage.getItem("userPIN")));
+                    setSavedUserPIN(JSON.parse(localStorage.getItem("userPIN")));
                 }
 
                 setFastRiderRides(response);
@@ -95,7 +96,13 @@ const Home = (props) => {
 
     const onChangeInputHandler = (event) => {
 
-        setUserPIN(event.target.value);
+        setInputValue(event.target.value);
+
+    };
+
+    const onAutoCompleteSelectHandler = (selectedValue) => {
+
+        setInputValue(selectedValue);
 
     };
 
@@ -109,18 +116,17 @@ const Home = (props) => {
 
     const onSubmitButtonHandler = () => {
 
-        console.log(userPIN);
-        console.log(chosenCardRideID);
+      console.log(inputValue);
 
-        if (userPIN && chosenCardRideID) {
+        if (inputValue && chosenCardRideID) {
 
-            API_Functions.postChosenRide(userPIN, chosenCardRideID)
+            API_Functions.postChosenRide(inputValue, chosenCardRideID)
 
                 .then(response => {
 
                     setAccessData([response]);
 
-                    localStorage.setItem("userPIN", JSON.stringify(userPIN));
+                    localStorage.setItem("userPIN", JSON.stringify(inputValue));
 
                     // toggleLoader(true)
 
@@ -189,7 +195,9 @@ const Home = (props) => {
                 <Input
                     animationDelayTime={'1.2s'}
                     onChangeHandler={onChangeInputHandler}
-                    inputDynamicValue={userPIN}
+                    onSelectHandler={onAutoCompleteSelectHandler}
+                    inputValue={inputValue}
+                    savedUserPIN={savedUserPIN}
                 />
 
 
