@@ -43,7 +43,7 @@ const AccessCodes = (props) => {
 
                     </div>
 
-                    <AccessCard animationDelayTime={'0.6s'} data={props.accessData} />
+                    <AccessCard animationDelayTime={'0.3s'} data={props.accessData} />
 
                 </div>
 

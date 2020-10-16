@@ -32,7 +32,6 @@ const Home = (props) => {
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
 
-
     const scrollPositionHandler = () => {
 
         const position = window.pageYOffset;
@@ -89,7 +88,6 @@ const Home = (props) => {
             });
         }, 100);
 
-
         scrollEventHandler();
 
         API_Functions.getFastRiderRides()
@@ -104,7 +102,8 @@ const Home = (props) => {
 
             }).catch(error => {
 
-                addToast(error.message, { appearance: 'error', autoDismiss: true });
+                addToast(error.message,
+                    { appearance: 'error', autoDismiss: true });
 
             });
 
@@ -127,15 +126,11 @@ const Home = (props) => {
 
     const onClickCardHandler = (rideID) => {
 
-        console.log(rideID);
-
         setChosenCardRideID(rideID);
 
     };
 
     const onSubmitButtonHandler = () => {
-
-        console.log(inputValue);
 
         if (inputValue && chosenCardRideID) {
 
@@ -155,10 +150,9 @@ const Home = (props) => {
 
         } else {
 
-            addToast("Please choose playground and enter your PIN code.", { appearance: 'error', autoDismiss: true });
+            addToast("Please choose playground and enter your PIN code.",
+                { appearance: 'error', autoDismiss: true });
         }
-
-
 
     };
 
@@ -191,13 +185,13 @@ const Home = (props) => {
 
                 </Title>
 
-                <Title animationDelayTime={'0.5s'} iconSource={PointerTitleIcon}>
+                <Title animationDelayTime={'0.4s'} iconSource={PointerTitleIcon}>
 
                     Press 'submit' to confirm and retrieve your access code
 
                 </Title>
 
-                <Title animationDelayTime={'0.7s'} iconSource={TimerTitleIcon}>
+                <Title animationDelayTime={'0.5s'} iconSource={TimerTitleIcon}>
 
                     When the time comes, use the spacial
                     FastRider line to cut out a considerable
@@ -209,7 +203,7 @@ const Home = (props) => {
 
             <div
                 className={[styles.InputAndBtnContainer, Animations.FadeIn].join(' ')}
-                style={{ animationDelay: '0.9s' }}
+                style={{ animationDelay: '0.6s' }}
             >
 
                 <Input
