@@ -10,7 +10,7 @@ import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
 import Loader from '../../UI/Loader/Loader';
-import Animations from '../../UI/Animations/Animations.module.css';
+// import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../../assets/Titles/ico-02.png';

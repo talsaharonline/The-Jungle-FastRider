@@ -12,31 +12,7 @@ const HomeCard = (props) => {
     const [modifiedTimeString, setModifiedTimeString] = useState("");
     const [dynamicCardBackgroundColor, setDynamicCardBackgroundColor] = useState({});
     const [checkIfCardClicked, setCheckIfCardClicked] = useState({ isClicked: false });
-    const [cardHoverColor, setCardHoverColor] = useState(false);
-
-    useEffect(() => {
-
-        if (cardHoverColor) {
-
-            setDynamicCardBackgroundColor({
-
-                backgroundColor: props.cardColor
-
-            });
-
-        } else {
-
-            setDynamicCardBackgroundColor({
-
-                borderTop: '0.4rem solid',
-                borderTopColor: props.cardColor,
-                backgroundColor: '#373737'
-
-            });
-        }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cardHoverColor]);
+    const [cardHoverBoolean, setCardHoverBoolean] = useState(false);
 
     useEffect(() => {
 
@@ -50,6 +26,41 @@ const HomeCard = (props) => {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+
+    useEffect(() => {
+
+        if (window.screen.width > 768) {
+
+            if (cardHoverBoolean) {
+
+                console.log("hover!");
+
+                setDynamicCardBackgroundColor({
+
+                    backgroundColor: props.cardColor
+
+                });
+
+            } else if (checkIfCardClicked.isClicked) {
+
+                console.log("no hover!");
+
+                setDynamicCardBackgroundColor({
+
+                    borderTop: '0.4rem solid',
+                    borderTopColor: props.cardColor,
+                    backgroundColor: '#373737'
+
+                });
+            }
+
+        }
+
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cardHoverBoolean]);
+
 
     const changeCardBackgroundColor = (cardColor) => {
 
@@ -98,14 +109,14 @@ const HomeCard = (props) => {
         <div
             className={[styles.HomeCard, Animtaions.FadeInUp].join(' ')}
             style={dynamicCardBackgroundColor}
-            onMouseEnter={() => setCardHoverColor(true)}
-            onMouseLeave={() => setCardHoverColor(false)}
+            onMouseEnter={() => setCardHoverBoolean(true)}
+            onMouseLeave={() => setCardHoverBoolean(false)}
             onClick={() => {
 
                 changeCardBackgroundColor(props.cardColor);
                 props.onClickHandler(props.rideID);
 
-            }} >
+            }}>
 
             <h3 className={styles.ZoneName}>{props.zoneName}</h3>
             <h2 className={styles.Playground}>{props.playground}</h2>
@@ -115,7 +126,7 @@ const HomeCard = (props) => {
                 <h3 className={styles.Time}>
 
                     <CardIcon iconSource={TimeCardIcon} />
-                    {modifiedTimeString ? modifiedTimeString : "loading..."}
+                    {modifiedTimeString && modifiedTimeString}
 
                 </h3>
 
