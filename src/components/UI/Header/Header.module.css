@@ -1,10 +1,10 @@
 .Header {
   position: fixed;
-  background: rgba(35, 35, 35, 0.9);
+  background: #232323e6;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

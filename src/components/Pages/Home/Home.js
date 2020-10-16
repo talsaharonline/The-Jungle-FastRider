@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Home.module.css';
-
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
+
+import styles from './Home.module.css';
 
 import Title from '../../UI/Title/Title/Title';
 import Input from '../../UI/Input/Input';
@@ -219,15 +219,21 @@ const Home = (props) => {
                     savedUserPIN={savedUserPIN}
                 />
 
-
-                <Button
-                    onClickHandler={onSubmitButtonHandler}
-                    visibility={displayButton}
-                >
-                    SUBMIT
-                </Button>
+                {window.screen.width > 768
+                    && <Button
+                        onClickHandler={onSubmitButtonHandler}
+                        visibility={displayButton}>
+                        SUBMIT
+                </Button>}
 
             </div>
+
+            {window.screen.width < 768
+                && <Button
+                    onClickHandler={onSubmitButtonHandler}
+                    visibility={displayButton}>
+                    SUBMIT
+                </Button>}
 
             <div
                 className={[styles.Cards, Animations.FadeInUp].join(' ')}

@@ -10,6 +10,11 @@
   }
 
   .InputAndBtnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     input {
       width: 23.7rem;
       background: $input-background-color;
@@ -43,16 +48,14 @@
 @media only screen and (min-width: 48rem) {
   .Home {
     margin-top: 10rem;
+
     .Titles {
       flex-direction: row;
       justify-content: center;
       margin-bottom: 3rem;
     }
+
     .InputAndBtnContainer {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
       margin: 1rem auto;
       width: 50rem;
 
