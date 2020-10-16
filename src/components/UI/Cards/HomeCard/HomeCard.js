@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomeCard.module.css';
-import Animtaions from '../../Animations/Animations.module.css';
 
 import CardIcon from '../CardIcon/CardIcon';
 import TimeCardIcon from '../../../../assets/Cards/ico-g-03.png';
@@ -107,7 +106,7 @@ const HomeCard = (props) => {
     return (
 
         <div
-            className={[styles.HomeCard, Animtaions.FadeInUp].join(' ')}
+            className={styles.HomeCard}
             style={dynamicCardBackgroundColor}
             onMouseEnter={() => setCardHoverBoolean(true)}
             onMouseLeave={() => setCardHoverBoolean(false)}

@@ -10,7 +10,7 @@ import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
 import Loader from '../../UI/Loader/Loader';
-// import Animations from '../../UI/Animations/Animations.module.css';
+import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
 import PointerTitleIcon from '../../../assets/Titles/ico-02.png';
@@ -81,6 +81,15 @@ const Home = (props) => {
 
         // localStorage.clear();
 
+        setTimeout(() => {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
+
+
         scrollEventHandler();
 
         API_Functions.getFastRiderRides()
@@ -137,8 +146,6 @@ const Home = (props) => {
                     setAccessData([response]);
 
                     localStorage.setItem("userPIN", JSON.stringify(inputValue));
-
-                    // toggleLoader(true)
 
                 }).catch(error => {
 
@@ -200,10 +207,12 @@ const Home = (props) => {
 
             </div>
 
-            <div className={styles.InputAndBtnContainer}>
+            <div
+                className={[styles.InputAndBtnContainer, Animations.FadeIn].join(' ')}
+                style={{ animationDelay: '0.9s' }}
+            >
 
                 <Input
-                    animationDelayTime={'0.9s'}
                     onChangeHandler={onChangeInputHandler}
                     onSelectHandler={onAutoCompleteSelectHandler}
                     inputValue={inputValue}
@@ -220,7 +229,10 @@ const Home = (props) => {
 
             </div>
 
-            <div className={styles.Cards}>
+            <div
+                className={[styles.Cards, Animations.FadeInUp].join(' ')}
+            //   style={{ animationDelay: '0.9s' }}
+            >
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './AccessCodes.module.css';
 
 import { connect } from 'react-redux';
@@ -11,6 +11,18 @@ import AccessTitleIcon from '../../../assets/Titles/ico-04.png';
 import NoCodesMonkeyImg from '../../../assets/Extra/no-codes.png';
 
 const AccessCodes = (props) => {
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
+
+    }, []);
 
     return (
 
