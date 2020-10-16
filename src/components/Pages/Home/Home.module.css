@@ -22,10 +22,10 @@
   color: #3b3232;
   font-size: 1.3rem;
   border: none;
+  outline: none;
 }
 
 .Home .InputAndBtnContainer input:focus {
-  outline: none;
   background: white;
 }
 
@@ -72,11 +72,12 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 0 auto;
-    width: 60rem;
+    margin: 1rem auto;
+    width: 50rem;
   }
   .Home .InputAndBtnContainer input {
     width: 38.3rem;
+    margin: auto;
   }
   .Home .Cards {
     width: 50rem;
