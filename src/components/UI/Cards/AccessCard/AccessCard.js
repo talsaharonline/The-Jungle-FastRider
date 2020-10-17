@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AccessCard.module.css';
-
 import Animations from '../../Animations/Animations.module.css';
 
 
 const AccessCard = (props) => {
 
-    const [modifiedTimeString, setModifiedTimeString] = useState("");
     const [dynamicCardBorderTopColor, setDynamicCardBorderTopColor] = useState({});
 
 
     useEffect(() => {
 
         if (props.data.length) {
-
-            setModifiedTimeString(props.data[0].return_time.slice(11, 16));
 
             setDynamicCardBorderTopColor({
 
@@ -26,16 +22,14 @@ const AccessCard = (props) => {
 
         };
 
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
 
-
-        <div 
-        className={[styles.AccessCard, Animations.FadeIn].join(' ')} 
-        style={dynamicCardBorderTopColor}>
+        <div
+            className={[styles.AccessCard, Animations.FadeIn].join(' ')}
+            style={dynamicCardBorderTopColor}>
 
             <div className={styles.Header}>
 
@@ -55,7 +49,7 @@ const AccessCard = (props) => {
 
                 <h3 className={styles.Text}>Return At</h3>
                 <h2 className={styles.Time}>
-                    {modifiedTimeString}
+                    {props.data.length && props.data[0].return_time.slice(11, 16)}
                 </h2>
 
             </div>

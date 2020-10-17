@@ -34,8 +34,6 @@ const Home = (props) => {
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
 
-
-
     useEffect(() => {
 
         if (window.screen.width < 768) {
