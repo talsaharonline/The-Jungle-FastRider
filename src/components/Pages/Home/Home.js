@@ -247,7 +247,7 @@ const Home = (props) => {
                 </Button>}
 
             <div
-                className={[styles.Cards, Animations.FadeInUp].join(' ')}>
+                className={[styles.Cards, Animations.FadeIn].join(' ')}>
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (
 
