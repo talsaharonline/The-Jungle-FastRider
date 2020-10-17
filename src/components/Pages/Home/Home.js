@@ -33,6 +33,7 @@ const Home = (props) => {
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
+    const [cardClickedBoolean, setCardClickedBoolean] = useState(false);
 
     useEffect(() => {
 
@@ -55,6 +56,20 @@ const Home = (props) => {
         }
 
     }, [props.scrollPosition]);
+
+    useEffect(() => {
+
+        if (chosenCardRideID) {
+            console.log(chosenCardRideID);
+            console.log("a card was added");
+
+        } else {
+            console.log(chosenCardRideID);
+            console.log("a card was removed");
+
+        }
+
+    }, [chosenCardRideID])
 
 
     useEffect(() => {
@@ -247,6 +262,7 @@ const Home = (props) => {
                         returnTime={card.return_time}
                         cardColor={card.zone.color}
                         onClickHandler={onClickCardHandler}
+                        isCardAdded={chosenCardRideID}
 
                     />
 

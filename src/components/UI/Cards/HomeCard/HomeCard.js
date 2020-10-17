@@ -26,23 +26,35 @@ const HomeCard = (props) => {
 
             if (cardHoverBoolean) {
 
-                if (cardClickBoolean) {
+                if (!props.isCardAdded) {
+
+                    if (cardClickBoolean) {
+
+                        setDynamicCardBackgroundColor({
+                            borderTop: '0.4rem solid',
+                            borderTopColor: props.cardColor,
+                            backgroundColor: '#373737'
+                        });
+
+                    } else {
+
+                        setDynamicCardBackgroundColor({
+
+                            borderTop: '0.4rem solid',
+                            borderTopColor: props.cardColor,
+                            backgroundColor: props.cardColor
+
+                        });
+
+                    }
+
+                } else if (!cardClickBoolean) {
 
                     setDynamicCardBackgroundColor({
                         borderTop: '0.4rem solid',
                         borderTopColor: props.cardColor,
-                        backgroundColor: '#373737'
-
-                    });
-
-                } else {
-
-                    setDynamicCardBackgroundColor({
-
-                        borderTop: '0.4rem solid',
-                        borderTopColor: props.cardColor,
-                        backgroundColor: props.cardColor
-
+                        backgroundColor: '#373737',
+                        cursor: 'not-allowed'
                     });
 
                 }
@@ -53,7 +65,6 @@ const HomeCard = (props) => {
                     borderTop: '0.4rem solid',
                     borderTopColor: props.cardColor,
                     backgroundColor: '#373737'
-
                 });
 
             } else {
@@ -79,23 +90,26 @@ const HomeCard = (props) => {
 
         if (eventBoolean && !cardClickBoolean) {
 
+            if (!props.isCardAdded) {
+
+                setDynamicCardBackgroundColor({
+
+                    borderTop: '0.4rem solid',
+                    borderTopColor: cardColor,
+                    backgroundColor: cardColor
+
+                });
+
+                console.log(props.rideID);
+
+                props.onClickHandler(props.rideID);
+
+                setCardClickBoolean(true);
+
+            } 
+
             //added
 
-            setDynamicCardBackgroundColor({
-
-                borderTop: '0.4rem solid',
-                borderTopColor: cardColor,
-                backgroundColor: cardColor
-
-            });
-
-            console.log(props.rideID);
-
-            props.onClickHandler(props.rideID);
-
-            // turn all other cards to regular background
-
-            setCardClickBoolean(true);
 
         } else if (eventBoolean && cardClickBoolean) {
 
