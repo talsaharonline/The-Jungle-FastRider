@@ -34,7 +34,7 @@ const Home = (props) => {
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
 
-  
+
 
     useEffect(() => {
 
@@ -56,12 +56,10 @@ const Home = (props) => {
 
         }
 
-
     }, [props.scrollPosition]);
 
 
     useEffect(() => {
-
 
         // localStorage.clear();
 
@@ -72,7 +70,6 @@ const Home = (props) => {
                 behavior: 'smooth'
             });
         }, 100);
-
 
         setShowCardsLoader(true);
 
@@ -85,8 +82,10 @@ const Home = (props) => {
                 }
 
                 setTimeout(() => {
+
                     setShowCardsLoader(false);
                     setFastRiderRides(response);
+
                 }, 2000);
 
             }).catch(error => {
@@ -130,7 +129,9 @@ const Home = (props) => {
                 .then(response => {
 
                     setTimeout(() => {
+
                         setAccessData([response]);
+
                     }, 2000);
 
                     localStorage.setItem("userPIN", JSON.stringify(inputValue));
@@ -138,6 +139,7 @@ const Home = (props) => {
                 }).catch(error => {
 
                     addToast(error.message, { appearance: 'error', autoDismiss: true });
+
                     setShowButtonLoader(false);
 
                 });
@@ -146,6 +148,7 @@ const Home = (props) => {
 
             addToast("Please enter your PIN code and choose a playground.",
                 { appearance: 'error', autoDismiss: true });
+
             setShowButtonLoader(false);
 
         }
@@ -159,6 +162,7 @@ const Home = (props) => {
             props.addAccessCard(accessData);
 
             setRedirectToAccessCodes(<Redirect to={{ pathname: "/access-codes" }} />)
+
             setShowButtonLoader(false);
 
         }
@@ -231,9 +235,7 @@ const Home = (props) => {
                 </Button>}
 
             <div
-                className={[styles.Cards, Animations.FadeInUp].join(' ')}
-            //   style={{ animationDelay: '0.9s' }}
-            >
+                className={[styles.Cards, Animations.FadeInUp].join(' ')}>
 
                 {fastRiderRides.length ? fastRiderRides.map(card => (
 

@@ -43,7 +43,6 @@ const HomeCard = (props) => {
 
             } else if (checkIfCardClicked.isClicked) {
 
-
                 setDynamicCardBackgroundColor({
 
                     borderTop: '0.4rem solid',
@@ -55,7 +54,6 @@ const HomeCard = (props) => {
 
         }
 
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cardHoverBoolean]);
 
@@ -63,9 +61,10 @@ const HomeCard = (props) => {
     const changeCardBackgroundColor = (cardColor) => {
 
         if (checkIfCardClicked.isClicked) {
-            
-            console.log("111111");
-            // add only
+
+            props.onClickHandler(props.rideID);
+
+            // turn all other cards to regular background
 
             setCheckIfCardClicked({
 
@@ -84,6 +83,9 @@ const HomeCard = (props) => {
         }
 
         if (!checkIfCardClicked.isClicked) {
+
+
+            props.onClickHandler(0);
 
             setDynamicCardBackgroundColor({
 
@@ -114,12 +116,7 @@ const HomeCard = (props) => {
             style={dynamicCardBackgroundColor}
             onMouseEnter={() => setCardHoverBoolean(true)}
             onMouseLeave={() => setCardHoverBoolean(false)}
-            onClick={() => {
-
-                changeCardBackgroundColor(props.cardColor);
-                props.onClickHandler(props.rideID);
-
-            }}>
+            onClick={() => changeCardBackgroundColor(props.cardColor)}>
 
             <h3 className={styles.ZoneName}>{props.zoneName}</h3>
             <h2 className={styles.Playground}>{props.playground}</h2>
