@@ -1,7 +1,5 @@
 import React from 'react';
-// import styles from './Input.module.css';
 import Autocomplete from 'react-autocomplete';
-// import Animations from '../Animations/Animations.module.css';
 
 const autoCompleteStyle = {
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
@@ -23,14 +21,16 @@ const Input = (props) => {
             getItemValue={item => item.label}
 
             inputProps={{ placeholder: '#PIN' }}
-            // wrapperStyle={{ width: '24rem' }}
 
             menuStyle={autoCompleteStyle}
             renderItem={(item, highlighted) =>
                 <div
                     key={item.id}
-                    style={{ backgroundColor: highlighted ? '#eee' : 'transparent', cursor: 'pointer' }}
-                >
+                    style={{
+                        backgroundColor: highlighted
+                            ? '#eee'
+                            : 'transparent', cursor: 'pointer'
+                    }}>
                     {item.label}
                 </div>
             }

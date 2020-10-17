@@ -35,6 +35,8 @@ const HomeCard = (props) => {
 
                 setDynamicCardBackgroundColor({
 
+                    borderTop: '0.4rem solid',
+                    borderTopColor: props.cardColor,
                     backgroundColor: props.cardColor
 
                 });
@@ -91,6 +93,8 @@ const HomeCard = (props) => {
 
             setDynamicCardBackgroundColor({
 
+                borderTop: '0.4rem solid',
+                borderTopColor: cardColor,
                 backgroundColor: cardColor
 
             });
