@@ -33,7 +33,6 @@ const Home = (props) => {
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
-    const [cardClickedBoolean, setCardClickedBoolean] = useState(false);
 
     useEffect(() => {
 
