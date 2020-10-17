@@ -53,4 +53,12 @@
 
 // Larger Desktop Screens and Above
 @media only screen and (min-width: 120rem) {
+  .AccessCodes {
+    margin-top: 10rem;
+    .NoCodesContainer {
+      .Message {
+        font-size: xx-large;
+      }
+    }
+  }
 }

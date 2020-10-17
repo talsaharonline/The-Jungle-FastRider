@@ -65,4 +65,16 @@
     display: none;
   }
 }
+
+@media only screen and (min-width: 120rem) {
+  .Header {
+    padding: 2rem 15rem;
+  }
+  .Header .Title {
+    font-size: 1.3rem;
+  }
+  .Header .NavLink {
+    font-size: 1.1rem;
+  }
+}
 /*# sourceMappingURL=Header.module.css.map */

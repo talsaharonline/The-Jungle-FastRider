@@ -57,4 +57,13 @@
     width: 15%;
   }
 }
+
+@media only screen and (min-width: 120rem) {
+  .AccessCodes {
+    margin-top: 10rem;
+  }
+  .AccessCodes .NoCodesContainer .Message {
+    font-size: xx-large;
+  }
+}
 /*# sourceMappingURL=AccessCodes.module.css.map */

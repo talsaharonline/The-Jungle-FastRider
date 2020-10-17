@@ -65,3 +65,18 @@
     }
   }
 }
+
+// Larger Desktop Screens and Above
+@media only screen and (min-width: 120rem) {
+  .Header {
+    padding: 2rem 15rem;
+
+    .Title {
+      font-size: 1.3rem;
+    }
+
+    .NavLink {
+      font-size: 1.1rem;
+    }
+  }
+}

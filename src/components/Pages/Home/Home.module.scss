@@ -31,7 +31,6 @@
         background: lighten($input-background-color, 50%);
       }
     }
-
   }
 
   .Cards {
@@ -84,4 +83,7 @@
 
 // Larger Desktop Screens and Above
 @media only screen and (min-width: 120rem) {
+  .Home {
+    margin-top: 13rem;
+  }
 }
