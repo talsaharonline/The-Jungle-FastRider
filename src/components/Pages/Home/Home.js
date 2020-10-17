@@ -56,7 +56,7 @@ const Home = (props) => {
 
         if (window.screen.width < 768) {
 
-            if (scrollPosition >= 0 && scrollPosition <= 300) {
+            if (scrollPosition <= 300) {
 
                 setDisplayButton(true);
 
