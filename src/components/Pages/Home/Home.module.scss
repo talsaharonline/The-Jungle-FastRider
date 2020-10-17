@@ -32,10 +32,6 @@
       }
     }
 
-    input + div {
-    
-    }
-
   }
 
   .Cards {
@@ -64,8 +60,8 @@
     }
 
     .InputAndBtnContainer {
-    width: 42.5rem;
-     
+      width: 42.5rem;
+      margin: 1rem auto;
 
       input {
         position: relative;
