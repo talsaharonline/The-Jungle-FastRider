@@ -9,7 +9,8 @@ import Title from '../../UI/Title/Title/Title';
 import Input from '../../UI/Input/Input';
 import HomeCard from '../../UI/Cards/HomeCard/HomeCard';
 import Button from '../../UI/Button/Button';
-import Loader from '../../UI/Loader/Loader';
+import CardsLoader from '../../UI/Loaders/CardsLoader/CardsLoader';
+import ButtonLoader from '../../UI/Loaders/ButtonLoader/ButtonLoader';
 import Animations from '../../UI/Animations/Animations.module.css';
 
 import TicketTitleIcon from '../../../assets/Titles/ico-01.png';
@@ -31,6 +32,9 @@ const Home = (props) => {
     const [chosenCardRideID, setChosenCardRideID] = useState(0);
     const [accessData, setAccessData] = useState([]);
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
+    const [showCardsLoader, setShowCardsLoader] = useState(false);
+    const [showButtonLoader, setShowButtonLoader] = useState(false);
+
 
     const scrollPositionHandler = () => {
 
@@ -90,6 +94,8 @@ const Home = (props) => {
 
         scrollEventHandler();
 
+        setShowCardsLoader(true);
+
         API_Functions.getFastRiderRides()
 
             .then(response => {
@@ -98,7 +104,10 @@ const Home = (props) => {
                     setSavedUserPIN(JSON.parse(localStorage.getItem("userPIN")));
                 }
 
-                setFastRiderRides(response);
+                setTimeout(() => {
+                    setShowCardsLoader(false);
+                    setFastRiderRides(response);
+                }, 2000);
 
             }).catch(error => {
 
@@ -134,11 +143,16 @@ const Home = (props) => {
 
         if (inputValue && chosenCardRideID) {
 
+            setShowButtonLoader(true);
+
             API_Functions.postChosenRide(inputValue, chosenCardRideID)
 
                 .then(response => {
 
-                    setAccessData([response]);
+                    setTimeout(() => {
+                        setShowButtonLoader(false);
+                        setAccessData([response]);
+                    }, 2000);
 
                     localStorage.setItem("userPIN", JSON.stringify(inputValue));
 
@@ -217,8 +231,10 @@ const Home = (props) => {
                     && <Button
                         onClickHandler={onSubmitButtonHandler}
                         visibility={displayButton}>
-                        SUBMIT
-                </Button>}
+                        {showButtonLoader
+                            ? <ButtonLoader />
+                            : "SUBMIT"}
+                    </Button>}
 
             </div>
 
@@ -226,7 +242,9 @@ const Home = (props) => {
                 && <Button
                     onClickHandler={onSubmitButtonHandler}
                     visibility={displayButton}>
-                    SUBMIT
+                    {showButtonLoader
+                        ? <ButtonLoader />
+                        : "SUBMIT"}
                 </Button>}
 
             <div
@@ -249,7 +267,7 @@ const Home = (props) => {
 
                     />
 
-                )) : <Loader />}
+                )) : showCardsLoader && <CardsLoader />}
 
             </div>
 
