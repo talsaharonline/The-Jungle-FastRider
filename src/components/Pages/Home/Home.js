@@ -150,7 +150,6 @@ const Home = (props) => {
                 .then(response => {
 
                     setTimeout(() => {
-                        setShowButtonLoader(false);
                         setAccessData([response]);
                     }, 2000);
 
@@ -177,6 +176,7 @@ const Home = (props) => {
             props.updateAccessData(accessData);
 
             setRedirectToAccessCodes(<Redirect to={{ pathname: "/access-codes" }} />)
+            setShowButtonLoader(false);
 
         }
 
