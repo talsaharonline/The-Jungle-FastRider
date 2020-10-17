@@ -1,1 +1,1 @@
-export const UPDATE_ACCESS_DATA = 'UPDATE_ACCESS_DATA';
+export const ADD_ACCESS_CARD = 'ADD_ACCESS_CARD';

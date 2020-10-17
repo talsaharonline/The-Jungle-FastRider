@@ -3,7 +3,6 @@ let newModifiedArray = [];
 
 export const generatePIN = () => {
 
-    // Creates a random 4 digit numbers
     let firstFourDigitNumber = Math.floor(1000 + Math.random() * 9000);
     let secondFourDigitNumber = Math.floor(1000 + Math.random() * 9000);
 
@@ -12,13 +11,13 @@ export const generatePIN = () => {
 
     let PIN = "JN-" + firstFourDigitNumber + "-" + secondFourDigitNumber + "-" + firstLetter + secondLetter;
 
+    // You can copy the generated PIN inside the console.
     console.log(PIN);
 
 };
 
 const convertNumberToASCIILetter = (fourDigitNumber) => {
 
-    // Split the number into array of digits
     let splittedNumberArray = Array.from(fourDigitNumber.toString()).map(Number);
     let newMultipliedNumber = 0;
 
@@ -45,7 +44,6 @@ const convertNumberToASCIILetter = (fourDigitNumber) => {
 
     let sumModifiedNumbers = 0;
 
-    // Sum all array numbers
     for (let i = 0; i < newModifiedArray.length; i++) {
 
         sumModifiedNumbers += newModifiedArray[i];

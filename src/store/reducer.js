@@ -4,7 +4,7 @@ const reducer = (state, action) => {
 
     switch (action.type) {
 
-        case actionTypes.UPDATE_ACCESS_DATA:
+        case actionTypes.ADD_ACCESS_CARD:
 
             localStorage.setItem("accessData", JSON.stringify(action.data));
             return action.data;

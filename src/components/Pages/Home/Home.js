@@ -24,7 +24,6 @@ import * as actionTypes from '../../../store/actions';
 const Home = (props) => {
 
     const { addToast } = useToasts();
-    const [scrollPosition, setScrollPosition] = useState(0);
     const [displayButton, setDisplayButton] = useState(false);
     const [fastRiderRides, setFastRiderRides] = useState([]);
     const [inputValue, setInputValue] = useState("");
@@ -35,32 +34,13 @@ const Home = (props) => {
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
 
-
-    const scrollPositionHandler = () => {
-
-        const position = window.pageYOffset;
-
-        setScrollPosition(position);
-
-    };
-
-    const scrollEventHandler = () => {
-
-        window.addEventListener('scroll', scrollPositionHandler, { passive: true });
-
-        return () => {
-
-            window.removeEventListener('scroll', scrollPositionHandler);
-
-        };
-
-    }
+  
 
     useEffect(() => {
 
         if (window.screen.width < 768) {
 
-            if (scrollPosition <= 300) {
+            if (props.scrollPosition <= 300) {
 
                 setDisplayButton(true);
 
@@ -77,10 +57,11 @@ const Home = (props) => {
         }
 
 
-    }, [scrollPosition]);
+    }, [props.scrollPosition]);
 
 
     useEffect(() => {
+
 
         // localStorage.clear();
 
@@ -92,7 +73,6 @@ const Home = (props) => {
             });
         }, 100);
 
-        scrollEventHandler();
 
         setShowCardsLoader(true);
 
@@ -164,7 +144,7 @@ const Home = (props) => {
 
         } else {
 
-            addToast("Please enter your PIN code and choose playground.",
+            addToast("Please enter your PIN code and choose a playground.",
                 { appearance: 'error', autoDismiss: true });
             setShowButtonLoader(false);
 
@@ -176,7 +156,7 @@ const Home = (props) => {
 
         if (accessData.length > 0) {
 
-            props.updateAccessData(accessData);
+            props.addAccessCard(accessData);
 
             setRedirectToAccessCodes(<Redirect to={{ pathname: "/access-codes" }} />)
             setShowButtonLoader(false);
@@ -285,9 +265,9 @@ const mapDispatchToProps = dispatch => {
 
     return {
 
-        updateAccessData: (accessData) => dispatch({
+        addAccessCard: (accessData) => dispatch({
 
-            type: actionTypes.UPDATE_ACCESS_DATA,
+            type: actionTypes.ADD_ACCESS_CARD,
             data: { accessData: accessData }
 
         })

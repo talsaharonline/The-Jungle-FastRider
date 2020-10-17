@@ -43,6 +43,7 @@ const HomeCard = (props) => {
 
             } else if (checkIfCardClicked.isClicked) {
 
+
                 setDynamicCardBackgroundColor({
 
                     borderTop: '0.4rem solid',
@@ -62,6 +63,9 @@ const HomeCard = (props) => {
     const changeCardBackgroundColor = (cardColor) => {
 
         if (checkIfCardClicked.isClicked) {
+            
+            console.log("111111");
+            // add only
 
             setCheckIfCardClicked({
 
