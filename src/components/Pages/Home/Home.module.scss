@@ -11,6 +11,10 @@
 
   .InputAndBtnContainer {
     position: relative;
+    margin: 1.5rem auto;
+    min-height: 3.5rem;
+    max-height: 3.5rem;
+    z-index: 99;
 
     input {
       width: 20.8rem;
@@ -27,6 +31,11 @@
         background: lighten($input-background-color, 50%);
       }
     }
+
+    input + div {
+    
+    }
+
   }
 
   .Cards {
@@ -55,12 +64,8 @@
     }
 
     .InputAndBtnContainer {
-      margin: 1rem auto;
-      width: 42.5rem;
-      min-height: 3.5rem;
-      max-height: 3.5rem;
-      z-index: 99;
-
+    width: 42.5rem;
+     
 
       input {
         position: relative;
