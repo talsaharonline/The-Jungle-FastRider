@@ -54,11 +54,11 @@ const AccessCodes = (props) => {
                         style={{ animationDelay: '0.3s' }}
                         src={NoCodesMonkeyImg} alt="" />
 
-                    <h1
+                    <h2
                         className={[styles.Message, Animations.FadeIn].join(' ')}
                         style={{ animationDelay: '0.3s' }}>
                         No access codes here.
-                    </h1>
+                    </h2>
                 </div>}
 
 
