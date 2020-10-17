@@ -33,8 +33,6 @@ const HomeCard = (props) => {
 
             if (cardHoverBoolean) {
 
-                console.log("hover!");
-
                 setDynamicCardBackgroundColor({
 
                     backgroundColor: props.cardColor
@@ -42,8 +40,6 @@ const HomeCard = (props) => {
                 });
 
             } else if (checkIfCardClicked.isClicked) {
-
-                console.log("no hover!");
 
                 setDynamicCardBackgroundColor({
 

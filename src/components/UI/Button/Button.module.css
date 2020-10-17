@@ -1,7 +1,7 @@
 .Button {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 4.5rem;
   background: #4c4c4b;
@@ -20,7 +20,7 @@
 
 @media only screen and (min-width: 48rem) {
   .Button {
-    position: static;
+    position: absolute;
     width: 10rem;
     height: 3.5rem;
   }

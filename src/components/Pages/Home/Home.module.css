@@ -14,19 +14,7 @@
 }
 
 .Home .InputAndBtnContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: relative;
 }
 
 .Home .InputAndBtnContainer input {
@@ -65,7 +53,7 @@
     margin-top: 10rem;
   }
   .Home .Titles {
-    width: 50rem;
+    width: 43rem;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -78,11 +66,20 @@
   }
   .Home .InputAndBtnContainer {
     margin: 1rem auto;
-    width: 50rem;
+    width: 42.5rem;
+    min-height: 3.5rem;
+    max-height: 3.5rem;
+    z-index: 99;
   }
   .Home .InputAndBtnContainer input {
-    width: 32.4rem;
-    margin: auto;
+    position: relative;
+    float: left;
+    width: 32.5rem;
+    margin: auto 10rem auto 0;
+  }
+  .Home .InputAndBtnContainer input + div {
+    min-width: 32.5rem !important;
+    margin-right: 10rem;
   }
   .Home .Cards {
     width: 50rem;

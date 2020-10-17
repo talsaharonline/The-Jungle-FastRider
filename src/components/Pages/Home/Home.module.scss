@@ -10,10 +10,7 @@
   }
 
   .InputAndBtnContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 
     input {
       width: 20.8rem;
@@ -50,7 +47,7 @@
     margin-top: 10rem;
 
     .Titles {
-      width: 50rem;
+      width: 43rem;
       flex-direction: row;
       justify-content: center;
       margin-bottom: 3rem;
@@ -59,11 +56,22 @@
 
     .InputAndBtnContainer {
       margin: 1rem auto;
-      width: 50rem;
+      width: 42.5rem;
+      min-height: 3.5rem;
+      max-height: 3.5rem;
+      z-index: 99;
+
 
       input {
-        width: 32.4rem;
-        margin: auto;
+        position: relative;
+        float: left;
+        width: 32.5rem;
+        margin: auto 10rem auto 0;
+      }
+
+      input + div {
+        min-width: 32.5rem !important;
+        margin-right: 10rem;
       }
     }
 

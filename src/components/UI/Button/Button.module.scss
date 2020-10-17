@@ -3,7 +3,7 @@
 .Button {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 4.5rem;
   background: $button-background-color;
@@ -25,9 +25,10 @@
 // Regular Desktop Screen and Above
 @media only screen and (min-width: 48rem) {
   .Button {
-    position: static;
+    position: absolute;
     width: 10rem;
     height: 3.5rem;
+
     &:hover {
       background: lighten($button-background-color, 5%);
     }
