@@ -11,18 +11,22 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    visibility: hidden;
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    visibility: hidden;
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -39,18 +43,22 @@
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
+    visibility: visible;
   }
   to {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
+    visibility: visible;
   }
   to {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -68,10 +76,12 @@
   0% {
     opacity: 0;
     -webkit-transform: translateY(20px);
+    visibility: hidden;
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
+    visibility: visible;
   }
 }
 
@@ -80,11 +90,13 @@
     opacity: 0;
     -webkit-transform: translateY(20px);
             transform: translateY(20px);
+    visibility: hidden;
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    visibility: visible;
   }
 }
 
@@ -102,10 +114,12 @@
   0% {
     opacity: 0;
     -webkit-transform: translateY(-20px);
+    visibility: hidden;
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
+    visibility: visible;
   }
 }
 
@@ -114,11 +128,13 @@
     opacity: 0;
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+    visibility: hidden;
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=Animations.module.css.map */
