@@ -158,13 +158,16 @@ const Home = (props) => {
                 }).catch(error => {
 
                     addToast(error.message, { appearance: 'error', autoDismiss: true });
+                    setShowButtonLoader(false);
 
                 });
 
         } else {
 
-            addToast("Please choose playground and enter your PIN code.",
+            addToast("Please enter your PIN code and choose playground.",
                 { appearance: 'error', autoDismiss: true });
+            setShowButtonLoader(false);
+
         }
 
     };
