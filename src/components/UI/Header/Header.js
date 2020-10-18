@@ -94,8 +94,8 @@ const Header = () => {
                             onClick={mobileMenuCloseHandler}>
 
                             <NavLink style={{ textDecoration: 'none', color: '#b9b9b9' }}
-                                activeStyle={{ color: '#edf0f1' }} to="/access-codes">
-                                Access Codes
+                                activeStyle={{ color: '#edf0f1' }} to="/access-code">
+                                Access Code
                             </NavLink>
 
                         </MenuItem>

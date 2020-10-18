@@ -59,11 +59,11 @@
 }
 
 @media only screen and (min-width: 120rem) {
-  .AccessCodes {
+  .AccessCode {
     margin-top: 10rem;
   }
-  .AccessCodes .NoCodesContainer .Message {
+  .AccessCode .NoCodesContainer .Message {
     font-size: xx-large;
   }
 }
-/*# sourceMappingURL=AccessCodes.module.css.map */
+/*# sourceMappingURL=AccessCode.module.css.map */

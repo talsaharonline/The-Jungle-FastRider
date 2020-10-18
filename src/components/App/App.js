@@ -7,7 +7,7 @@ import styles from './App.module.css';
 import Header from '../UI/Header/Header';
 
 import Home from '../Pages/Home/Home';
-import AccessCodes from '../Pages/AccessCodes/AccessCodes';
+import AccessCode from '../Pages/AccessCode/AccessCode';
 
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
 
         <ToastProvider>
 
-          <Route path="/access-codes" component={AccessCodes} />
+          <Route path="/access-code" component={AccessCode} />
           <Route exact path="/" render={() => <Home scrollPosition={scrollPosition} />} />
 
         </ToastProvider>

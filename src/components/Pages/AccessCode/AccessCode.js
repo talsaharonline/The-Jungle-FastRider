@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import styles from './AccessCodes.module.css';
+import styles from './AccessCode.module.css';
 
 import Title from '../../UI/Title/Title/Title';
 import AccessCard from '../../UI/Cards/AccessCard/AccessCard';
@@ -10,7 +10,7 @@ import Animations from '../../UI/Animations/Animations.module.css';
 import AccessTitleIcon from '../../../assets/Titles/ico-04.png';
 import NoCodesMonkeyImg from '../../../assets/Extra/no-codes.png';
 
-const AccessCodes = (props) => {
+const AccessCode = (props) => {
 
     useEffect(() => {
 
@@ -28,7 +28,7 @@ const AccessCodes = (props) => {
 
     return (
 
-        <div className={styles.AccessCodes}>
+        <div className={styles.AccessCode}>
 
             {props.accessData.length
 
@@ -82,4 +82,4 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps, null)(AccessCodes);
+export default connect(mapStateToProps, null)(AccessCode);

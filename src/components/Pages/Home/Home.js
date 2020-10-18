@@ -177,7 +177,7 @@ const Home = (props) => {
 
             props.addAccessCard(accessData);
 
-            setRedirectToAccessCodesPage(<Redirect to={{ pathname: "/access-codes" }} />)
+            setRedirectToAccessCodesPage(<Redirect to={{ pathname: "/access-code" }} />)
 
             setDisplayButtonLoader(false);
 

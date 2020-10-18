@@ -6,7 +6,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h3 align="center">Welcome to React Weather App</h3>
+  <h3 align="center">Welcome to The Jungle™ FastRider App</h3>
 
   <p align="center">
     <br />
@@ -45,21 +45,17 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project was deployed with a new API key, which will let you make a 50 requests per day.
+This project generates and prints a new valid PIN code every time you refresh the home page,
+which you can copy in the console inside your browser.
 
-In case you are getting en error, you can register and create a new app in order to get a new API key.
+Each PIN key can provide a new access code only in the playground time frame, 
+which means you cannot get a second access code inside the playground time frame.
 
-1. Get a free API Key at [https://developer.accuweather.com/](https://developer.accuweather.com/)
-
-4. Enter your API in `API_Constants.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
 <!-- ADDITIONAL NOTES -->
 ## Additional Notes
 * This project is fully responsive, including larger desktop screens and mobile devices.
 * This project was deployed directly from github to Netlify.
-* This project was built with Local Storage in order to have a better user experience when refreshing the browser (it saves your favorite cities).
+* This project was built with Local Storage in order to have a better user experience when refreshing the browser (it saves your access code).
 
 <!-- CONTACT -->
 ## Contact
@@ -69,6 +65,3 @@ Tal Sahar
 Gmail - talsaharonline@gmail.com
 
 Linkedin - https://www.linkedin.com/in/tal-sahar
-
-
-Project Link: [https://github.com/talsaharonline/Tal-Sahar-21-09-2020](https://github.com/talsaharonline/Tal-Sahar-21-09-2020)

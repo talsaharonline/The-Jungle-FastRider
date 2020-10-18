@@ -1,6 +1,6 @@
 @import "../../../design-tokens/scss-variables";
 
-.AccessCodes {
+.AccessCode {
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
@@ -53,7 +53,7 @@
 
 // Larger Desktop Screens and Above
 @media only screen and (min-width: 120rem) {
-  .AccessCodes {
+  .AccessCode {
     margin-top: 10rem;
 
     .NoCodesContainer {
