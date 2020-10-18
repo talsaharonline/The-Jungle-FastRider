@@ -24,7 +24,7 @@
 
 <!-- Project Overview -->
 
-## overview
+## Overview
 
 <p align="center">
     <img src="./GitHubAssets/mobile1.PNG">
