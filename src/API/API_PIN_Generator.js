@@ -13,6 +13,8 @@ export const generatePIN = () => {
 
     // For testing and development you can copy the generated PIN from the console.
     console.log(PIN);
+    
+    return(PIN);
 
 };
 

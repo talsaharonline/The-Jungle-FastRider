@@ -118,6 +118,31 @@ const Home = (props) => {
 
     };
 
+    const postDifferentPIN = () => {
+
+        API_Functions.postChosenRide(API_PIN_Generator.generatePIN(), chosenCardRideID)
+
+            .then(response => {
+
+                setTimeout(() => {
+
+                    setAccessData([response]);
+
+                }, 2000);
+
+                localStorage.setItem("userPIN", JSON.stringify(inputValue));
+
+            }).catch(error => {
+
+                addToast(error.response.data.message,
+                    { appearance: 'error', autoDismiss: true });
+
+                setDisplayButtonLoader(false);
+
+            });
+
+    };
+
     const onSubmitButtonHandler = () => {
 
         if (inputValue && chosenCardRideID) {
@@ -138,10 +163,18 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    addToast(error.response.data.message,
-                        { appearance: 'error', autoDismiss: true });
+                    if (error.response.data.code === 4002) {
 
-                    setDisplayButtonLoader(false);
+                        postDifferentPIN();
+
+                    } else {
+
+                        addToast(error.response.data.message,
+                            { appearance: 'error', autoDismiss: true });
+
+                        setDisplayButtonLoader(false);
+
+                    }
 
                 });
 
