@@ -140,13 +140,23 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    addToast(error.message, { appearance: 'error', autoDismiss: true });
+                    let errorMessage;
+
+                    if (error.message.includes("400")) {
+
+                        errorMessage = 'Please enter an unexpired valid PIN.';
+
+                    };
+
+                    addToast(errorMessage, { appearance: 'error', autoDismiss: true });
 
                     setDisplayButtonLoader(false);
 
                 });
 
         } else {
+
+            // unvalid pin code
 
             addToast("Please enter your PIN code and choose a playground.",
                 { appearance: 'error', autoDismiss: true });
