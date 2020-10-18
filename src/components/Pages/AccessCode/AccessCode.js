@@ -14,6 +14,8 @@ const AccessCode = (props) => {
 
     useEffect(() => {
 
+        // localStorage.clear();
+
         props.scrollToTop();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

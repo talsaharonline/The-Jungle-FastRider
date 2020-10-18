@@ -35,6 +35,7 @@ const Home = (props) => {
     const [savedUserPIN, setSavedUserPIN] = useState("");
     const [chosenCardRideID, setChosenCardRideID] = useState(0);
     const [accessData, setAccessData] = useState([]);
+    const [chosenCardProperties, setChosenCardProperties] = useState({});
 
 
     useEffect(() => {
@@ -127,12 +128,92 @@ const Home = (props) => {
 
             }).catch(error => {
 
-                addToast(error.response.data.message,
-                    { appearance: 'error', autoDismiss: true });
+                if (error.response.data.code === 4003) {
 
-                setDisplayButtonLoader(false);
+                    postChosenRideWithDifferentRideID();
+
+                } else {
+
+                    addToast(error.response.data.message,
+                        { appearance: 'error', autoDismiss: true });
+
+                    setDisplayButtonLoader(false);
+
+                }
 
             });
+
+    };
+
+    const postChosenRideWithDifferentRideID = () => {
+
+        console.log("postChosenRideWithDifferentRideID");
+
+        let randomRideID = Math.floor(Math.random() * 25) + 1;
+
+        API_Functions.postChosenRide(API_PIN_Generator.generatePIN(), randomRideID)
+
+            .then(response => {
+
+                setTimeout(() => {
+
+                    setAccessData(
+
+                        [
+
+                            {
+                                id: response.id,
+                                ride: {
+                                    id: response.ride.id,
+                                    zone: {
+                                        id: response.ride.zone.id,
+                                        name: chosenCardProperties.zoneName,
+                                        color: chosenCardProperties.color
+                                    },
+                                    name: chosenCardProperties.playground,
+                                    remaining_tickets: response.ride.remainint_tickets,
+                                    return_time: chosenCardProperties.returnTime
+                                },
+                                access_code: response.access_code,
+                                return_time: chosenCardProperties.returnTime
+                            }
+
+
+                        ]);
+
+                }, 2000);
+
+                localStorage.setItem("userPIN", JSON.stringify(inputValue));
+
+            }).catch(error => {
+
+                if (error.response.data.code === 4003) {
+
+                    postChosenRideWithDifferentRideID();
+
+                } else {
+
+                    addToast(error.response.data.message,
+                        { appearance: 'error', autoDismiss: true });
+
+                    setDisplayButtonLoader(false);
+
+                }
+
+            });
+
+    };
+
+    const saveChosenCardProperties = (zoneName, playground, returnTime, color) => {
+
+        setChosenCardProperties({
+
+            zoneName: zoneName,
+            playground: playground,
+            returnTime: returnTime,
+            color: color
+
+        });
 
     };
 
@@ -156,17 +237,31 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    if (error.response.data.code === 4002) {
+                    console.log(error.response.data.code);
 
-                        postChosenRideWithDifferentPIN();
+                    switch (error.response.data.code) {
 
-                    } else {
+                        case 4002:
 
-                        addToast(error.response.data.message,
-                            { appearance: 'error', autoDismiss: true });
+                            postChosenRideWithDifferentPIN();
 
-                        setDisplayButtonLoader(false);
+                            break;
 
+                        case 4003:
+
+                            console.log("yay!");
+                            postChosenRideWithDifferentRideID();
+
+                            break;
+
+                        default:
+
+                            addToast(error.response.data.message,
+                                { appearance: 'error', autoDismiss: true });
+
+                            setDisplayButtonLoader(false);
+
+                            break;
                     }
 
                 });
@@ -282,6 +377,7 @@ const Home = (props) => {
                         cardColor={card.zone.color}
                         onClickHandler={onClickCardHandler}
                         isCardAdded={chosenCardRideID}
+                        saveChosenCardProperties={saveChosenCardProperties}
 
                     />
 

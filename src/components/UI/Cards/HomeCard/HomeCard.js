@@ -176,7 +176,12 @@ const HomeCard = (props) => {
             style={dynamicCardBackgroundColor}
             onMouseEnter={() => setCardHoverBoolean(true)}
             onMouseLeave={() => setCardHoverBoolean(false)}
-            onClick={() => changeCardBackgroundColor(props.cardColor, true)}>
+            onClick={(event) => {
+
+                changeCardBackgroundColor(props.cardColor, true);
+                props.saveChosenCardProperties(props.zoneName, props.playground, props.returnTime, props.cardColor);
+
+            }}>
 
             <h3 className={styles.ZoneName}>{props.zoneName}</h3>
             <h2 className={styles.Playground}>{props.playground}</h2>
