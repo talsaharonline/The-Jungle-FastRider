@@ -33,6 +33,7 @@ const Home = (props) => {
     const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
     const [showCardsLoader, setShowCardsLoader] = useState(false);
     const [showButtonLoader, setShowButtonLoader] = useState(false);
+    // const [androidDeviceBoolean, setAndroidDeviceBoolean] = useState();
 
     useEffect(() => {
 
@@ -160,6 +161,12 @@ const Home = (props) => {
 
             addToast("Please enter your PIN code and choose a playground.",
                 { appearance: 'error', autoDismiss: true });
+
+            if (/android/i.test(navigator.userAgent)) {
+
+                window.navigator.vibrate(200);
+                
+            }
 
             setShowButtonLoader(false);
 

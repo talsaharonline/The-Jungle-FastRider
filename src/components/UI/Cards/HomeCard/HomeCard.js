@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomeCard.module.css';
 
+import Animations from '../../Animations/Animations.module.css';
+
 import CardIcon from '../CardIcon/CardIcon';
 import TimeCardIcon from '../../../../assets/Cards/ico-g-03.png';
 import TicketsCardIcon from '../../../../assets/Cards/ico-g-01.png';
@@ -11,6 +13,7 @@ const HomeCard = (props) => {
     const [dynamicCardBackgroundColor, setDynamicCardBackgroundColor] = useState({});
     const [cardClickBoolean, setCardClickBoolean] = useState(false);
     const [cardHoverBoolean, setCardHoverBoolean] = useState(false);
+    const [shakeCardBoolean, setShakeCardBoolean] = useState(false);
 
     useEffect(() => {
 
@@ -100,13 +103,11 @@ const HomeCard = (props) => {
 
                 });
 
-                console.log(props.rideID);
-
                 props.onClickHandler(props.rideID);
 
                 setCardClickBoolean(true);
 
-            } 
+            }
 
             //added
 
@@ -122,6 +123,7 @@ const HomeCard = (props) => {
                 backgroundColor: '#373737'
 
             });
+
 
             props.onClickHandler(0);
 
@@ -139,12 +141,33 @@ const HomeCard = (props) => {
 
         }
 
+        if (window.screen.width < 768) {
+
+            if (props.isCardAdded && !cardClickBoolean) {
+
+                setShakeCardBoolean(true);
+                
+                setTimeout(() => {
+                    setShakeCardBoolean(false);
+                }, 500);
+
+                if (/android/i.test(navigator.userAgent)) {
+
+                    console.log("vibrate!");
+                    window.navigator.vibrate(200);
+
+                }
+
+            }
+
+        }
+
     };
 
     return (
 
         <div
-            className={styles.HomeCard}
+            className={[styles.HomeCard, shakeCardBoolean && Animations.Shake].join(' ')}
             style={dynamicCardBackgroundColor}
             onMouseEnter={() => setCardHoverBoolean(true)}
             onMouseLeave={() => setCardHoverBoolean(false)}
