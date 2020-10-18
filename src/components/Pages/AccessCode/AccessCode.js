@@ -62,7 +62,7 @@ const AccessCode = (props) => {
                     <h2
                         className={[styles.Message, Animations.FadeIn].join(' ')}
                         style={{ animationDelay: '0.3s' }}>
-                        No access codes here.
+                        No access code here.
                     </h2>
 
                 </div>}
