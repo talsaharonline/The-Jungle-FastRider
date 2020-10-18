@@ -156,8 +156,6 @@ const Home = (props) => {
 
         } else {
 
-            // unvalid pin code
-
             addToast("Please enter your PIN code and choose a playground.",
                 { appearance: 'error', autoDismiss: true });
 
