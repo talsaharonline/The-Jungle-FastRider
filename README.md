@@ -22,6 +22,8 @@
 - [Additional Notes](#additional-notes)
 - [Contact](#contact)
 
+<br />
+
 <!-- Project Overview -->
 
 ## Overview
@@ -33,6 +35,8 @@
     <img src="./GitHubAssets/desktop1.PNG">
     <img src="./GitHubAssets/desktop2.PNG">
 </p>
+
+<br />
 
 ### Built With
 
@@ -48,6 +52,8 @@
 - [CSS Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
 - [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
+<br />
+
 <!-- USAGE EXAMPLES -->
 
 ## Usage
@@ -58,6 +64,8 @@ which you can copy in the console inside your browser.
 Each PIN key can provide a new access code only in the playground time frame,
 which means you cannot get a second access code inside the playground time frame.
 
+<br />
+
 <!-- ADDITIONAL NOTES -->
 
 ## Additional Notes
@@ -65,6 +73,8 @@ which means you cannot get a second access code inside the playground time frame
 - This project is fully responsive, including larger desktop screens and mobile devices.
 - This project was deployed directly from github to Netlify.
 - This project was built with Local Storage in order to have a better user experience when refreshing the browser (it saves your access code).
+
+<br />
 
 <!-- CONTACT -->
 
