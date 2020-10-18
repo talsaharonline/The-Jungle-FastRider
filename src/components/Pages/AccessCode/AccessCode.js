@@ -14,6 +14,8 @@ const AccessCode = (props) => {
 
     useEffect(() => {
 
+        // localStorage.clear();
+
         setTimeout(() => {
 
             window.scroll({
