@@ -147,8 +147,6 @@ const Home = (props) => {
 
     const postChosenRideWithDifferentRideID = () => {
 
-        console.log("postChosenRideWithDifferentRideID");
-
         let randomRideID = Math.floor(Math.random() * 25) + 1;
 
         API_Functions.postChosenRide(API_PIN_Generator.generatePIN(), randomRideID)
@@ -237,8 +235,6 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    console.log(error.response.data.code);
-
                     switch (error.response.data.code) {
 
                         case 4002:
@@ -249,7 +245,6 @@ const Home = (props) => {
 
                         case 4003:
 
-                            console.log("yay!");
                             postChosenRideWithDifferentRideID();
 
                             break;
