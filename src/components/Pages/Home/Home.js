@@ -90,7 +90,7 @@ const Home = (props) => {
 
             }).catch(error => {
 
-                addToast(error.message,
+                addToast(error.response.data.message,
                     { appearance: 'error', autoDismiss: true });
 
             });
@@ -138,15 +138,8 @@ const Home = (props) => {
 
                 }).catch(error => {
 
-                    let errorMessage;
-
-                    if (error.message.includes("400")) {
-
-                        errorMessage = 'Please enter an unexpired valid PIN.';
-
-                    };
-
-                    addToast(errorMessage, { appearance: 'error', autoDismiss: true });
+                    addToast(error.response.data.message,
+                        { appearance: 'error', autoDismiss: true });
 
                     setDisplayButtonLoader(false);
 
