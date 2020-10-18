@@ -24,7 +24,7 @@ import * as actionTypes from '../../../store/actions';
 const Home = (props) => {
 
     const { addToast } = useToasts();
-    const [redirectToAccessCodesPage, setRedirectToAccessCodesPage] = useState([]);
+    const [redirectToAccessCodePage, setRedirectToAccessCodePage] = useState([]);
 
     const [displaySubmitButton, setDisplaySubmitButton] = useState(false);
     const [displayCardsLoader, setDisplayCardsLoader] = useState(false);
@@ -60,8 +60,6 @@ const Home = (props) => {
     }, [props.scrollPosition]);
 
     useEffect(() => {
-
-        // localStorage.clear();
 
         setTimeout(() => {
 
@@ -177,7 +175,7 @@ const Home = (props) => {
 
             props.addAccessCard(accessData);
 
-            setRedirectToAccessCodesPage(<Redirect to={{ pathname: "/access-code" }} />)
+            setRedirectToAccessCodePage(<Redirect to={{ pathname: "/access-code" }} />)
 
             setDisplayButtonLoader(false);
 
@@ -190,7 +188,7 @@ const Home = (props) => {
 
         <div className={styles.Home}>
 
-            {redirectToAccessCodesPage ? redirectToAccessCodesPage : null}
+            {redirectToAccessCodePage ? redirectToAccessCodePage : null}
 
             <div className={styles.Titles}>
 

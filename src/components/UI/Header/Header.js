@@ -122,9 +122,9 @@ const Header = () => {
                         <NavLink
                             className={styles.NavLink}
                             activeStyle={{ color: '#edf0f1' }}
-                            to="/access-codes">
+                            to="/access-code">
 
-                            Access Codes
+                            Access Code
                             
                         </NavLink>
                           
