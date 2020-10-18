@@ -59,17 +59,10 @@ const Home = (props) => {
 
     }, [props.scrollPosition]);
 
+
     useEffect(() => {
 
-        setTimeout(() => {
-
-            window.scroll({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-
-        }, 100);
+        props.scrollToTop();
 
         setDisplayCardsLoader(true);
 
@@ -118,7 +111,7 @@ const Home = (props) => {
 
     };
 
-    const postDifferentPIN = () => {
+    const postChosenRideWithDifferentPIN = () => {
 
         API_Functions.postChosenRide(API_PIN_Generator.generatePIN(), chosenCardRideID)
 
@@ -165,7 +158,7 @@ const Home = (props) => {
 
                     if (error.response.data.code === 4002) {
 
-                        postDifferentPIN();
+                        postChosenRideWithDifferentPIN();
 
                     } else {
 

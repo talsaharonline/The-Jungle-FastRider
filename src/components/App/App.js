@@ -34,6 +34,7 @@ function App() {
 
   };
 
+
   useEffect(() => {
 
     scrollEventHandler();
@@ -41,6 +42,19 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const scrollWindowToTop = () => {
+
+    setTimeout(() => {
+
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+
+    }, 100);
+
+  };
 
 
   return (
@@ -53,8 +67,12 @@ function App() {
 
         <ToastProvider>
 
-          <Route path="/access-code" component={AccessCode} />
-          <Route exact path="/" render={() => <Home scrollPosition={scrollPosition} />} />
+          <Route path="/access-code" render={() => <AccessCode
+            scrollToTop={scrollWindowToTop} />} />
+
+          <Route exact path="/" render={() => <Home
+            scrollPosition={scrollPosition}
+            scrollToTop={scrollWindowToTop} />} />
 
         </ToastProvider>
 

@@ -14,18 +14,9 @@ const AccessCode = (props) => {
 
     useEffect(() => {
 
-        // localStorage.clear();
+        props.scrollToTop();
 
-        setTimeout(() => {
-
-            window.scroll({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-
-        }, 100);
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
