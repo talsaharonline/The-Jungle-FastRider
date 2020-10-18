@@ -27,13 +27,12 @@
 ## overview
 
 <p align="center">
-    <img src="./GitHubAssets/mobile1.png">
-    <img src="./GitHubAssets/mobile2.png">
-    <img src="./GitHubAssets/mobile3.png">
-    <img src="./GitHubAssets/desktop1.png">
-    <img src="./GitHubAssets/desktop2.png">
+    <img src="./GitHubAssets/mobile1.PNG">
+    <img src="./GitHubAssets/mobile2.PNG">
+    <img src="./GitHubAssets/mobile3.PNG">
+    <img src="./GitHubAssets/desktop1.PNG">
+    <img src="./GitHubAssets/desktop2.PNG">
 </p>
-
 
 ### Built With
 
@@ -48,7 +47,6 @@
 - [FlexBox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [CSS Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
 - [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-
 
 <!-- USAGE EXAMPLES -->
 
