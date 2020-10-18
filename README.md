@@ -1,9 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/talsaharonline/Tal-Sahar-21-09-2020">
     <img src="./GitHubAssets/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Welcome to The Jungle™ FastRider App</h3>
 
@@ -29,9 +27,11 @@
 ## overview
 
 <p align="center">
-  <a href="">
-    <img src="./GitHubAssets/logo.png" alt="Logo" width="80" height="80">
-  </a>
+    <img src="./GitHubAssets/mobile1.png">
+    <img src="./GitHubAssets/mobile2.png">
+    <img src="./GitHubAssets/mobile3.png">
+    <img src="./GitHubAssets/desktop1.png">
+    <img src="./GitHubAssets/desktop2.png">
 </p>
 
 
