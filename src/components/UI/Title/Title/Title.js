@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './Title.module.css';
 import Animations from '../../Animations/Animations.module.css';
 
@@ -11,10 +12,14 @@ const Title = (props) => (
         style={{ animationDelay: props.animationDelayTime }}>
 
         <TitleIcon iconSource={props.iconSource} />
-        <p className={styles.Text}>{props.children}</p>
+
+        <p className={styles.Text}>
+
+            {props.children}
+
+        </p>
 
     </div>
-
 
 );
 

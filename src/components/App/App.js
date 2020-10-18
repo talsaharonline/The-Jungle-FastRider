@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import styles from './App.module.css';
-
 import { Route, Switch } from 'react-router-dom';
 import { ToastProvider } from 'react-toast-notifications';
+
+import styles from './App.module.css';
 
 import Header from '../UI/Header/Header';
 
@@ -32,7 +32,7 @@ function App() {
 
     };
 
-  }
+  };
 
   useEffect(() => {
 
@@ -64,6 +64,6 @@ function App() {
 
   );
 
-}
+};
 
 export default App;

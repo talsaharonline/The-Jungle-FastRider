@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import styles from './AccessCodes.module.css';
-
 import { connect } from 'react-redux';
+
+import styles from './AccessCodes.module.css';
 
 import Title from '../../UI/Title/Title/Title';
 import AccessCard from '../../UI/Cards/AccessCard/AccessCard';
@@ -14,14 +14,14 @@ const AccessCodes = (props) => {
 
     useEffect(() => {
 
-
         setTimeout(() => {
+
             window.scroll({
                 top: 0,
                 left: 0,
                 behavior: 'smooth'
             });
-            
+
         }, 100);
 
     }, []);
@@ -51,6 +51,7 @@ const AccessCodes = (props) => {
 
 
                 : <div className={styles.NoCodesContainer}>
+
                     <img
                         className={[styles.NoCodesMonkeyImg, Animations.FadeIn].join(' ')}
                         style={{ animationDelay: '0.3s' }}
@@ -61,8 +62,8 @@ const AccessCodes = (props) => {
                         style={{ animationDelay: '0.3s' }}>
                         No access codes here.
                     </h2>
-                </div>}
 
+                </div>}
 
         </div>
 

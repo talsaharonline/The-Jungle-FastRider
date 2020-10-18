@@ -7,14 +7,14 @@ const reducer = (state, action) => {
         case actionTypes.ADD_ACCESS_CARD:
 
             localStorage.setItem("accessData", JSON.stringify(action.data));
+            
             return action.data;
 
         default:
 
             return state;
 
-    }
-
+    };
 
 };
 

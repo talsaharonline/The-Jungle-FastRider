@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import Logo from '../Logo/Logo';
 import styles from './Header.module.css';
-
-import { NavLink } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
@@ -38,7 +38,6 @@ const Header = () => {
 
     };
 
-
     return (
 
         <header className={styles.Header}>
@@ -58,13 +57,18 @@ const Header = () => {
 
                 <ul>
 
-
                     {/* Mobile Menu */}
-                    <Button className={styles.menuBtnContainer} aria-controls="simple-menu" aria-haspopup="true" onClick={mobileMenuIconClickHandler}>
+
+                    <Button
+                        className={styles.menuBtnContainer}
+                        aria-controls="simple-menu" aria-haspopup="true"
+                        onClick={mobileMenuIconClickHandler}>
+
                         <MenuIcon
                             className={styles.mobileMenu}
                             fontSize="large"
                         />
+
                     </Button>
 
                     <Menu
@@ -74,30 +78,56 @@ const Header = () => {
                         keepMounted
                         open={Boolean(anchorEl)}
                         onClose={mobileMenuCloseHandler}>
+
                         <MenuItem
                             className={MaterialUIClasses.mobileMenuLink}
                             onClick={mobileMenuCloseHandler}>
+
                             <NavLink style={{ textDecoration: 'none', color: '#b9b9b9' }}
                                 activeStyle={{ color: '#edf0f1' }} to="/" exact>
                                 Home
                             </NavLink>
+
                         </MenuItem>
+
                         <MenuItem
                             onClick={mobileMenuCloseHandler}>
+
                             <NavLink style={{ textDecoration: 'none', color: '#b9b9b9' }}
                                 activeStyle={{ color: '#edf0f1' }} to="/access-codes">
                                 Access Codes
                             </NavLink>
+
                         </MenuItem>
+
                     </Menu>
 
                     {/*Desktop Menu*/}
+
                     <li>
-                        <NavLink className={styles.NavLink} activeStyle={{ color: '#edf0f1' }} to="/" exact>Home</NavLink>
+
+                        <NavLink
+                            className={styles.NavLink}
+                            activeStyle={{ color: '#edf0f1' }}
+                            to="/" exact>
+
+                            Home
+
+                         </NavLink>
+
                     </li>
 
                     <li>
-                        <NavLink className={styles.NavLink} activeStyle={{ color: '#edf0f1' }} to="/access-codes">Access Codes</NavLink>
+
+                        <NavLink
+                            className={styles.NavLink}
+                            activeStyle={{ color: '#edf0f1' }}
+                            to="/access-codes">
+
+                            Access Codes
+                            
+                        </NavLink>
+                          
                     </li>
 
                 </ul>
@@ -105,7 +135,7 @@ const Header = () => {
             </nav>
 
         </header>
-    )
+    );
 };
 
 export default Header;

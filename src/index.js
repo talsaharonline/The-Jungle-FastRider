@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.module.css';
-import App from './components/App/App';
-import * as serviceWorker from './serviceWorker';
-
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
+import './index.module.css';
+
+import App from './components/App/App';
+import * as serviceWorker from './serviceWorker';
 import reducer from './store/reducer';
 
-// localStorage.clear();
 
 let initialState = localStorage.getItem("accessData")
   ? JSON.parse(localStorage.getItem("accessData"))

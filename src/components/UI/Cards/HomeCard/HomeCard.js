@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from './HomeCard.module.css';
 
+import styles from './HomeCard.module.css';
 import Animations from '../../Animations/Animations.module.css';
 
 import CardIcon from '../CardIcon/CardIcon';
@@ -24,6 +24,8 @@ const HomeCard = (props) => {
 
 
     useEffect(() => {
+
+        // Desktop UX for hovering effects
 
         if (window.screen.width > 768) {
 
@@ -49,7 +51,7 @@ const HomeCard = (props) => {
 
                         });
 
-                    }
+                    };
 
                 } else if (!cardClickBoolean) {
 
@@ -60,7 +62,7 @@ const HomeCard = (props) => {
                         cursor: 'not-allowed'
                     });
 
-                }
+                };
 
             } else if (!cardClickBoolean) {
 
@@ -80,9 +82,9 @@ const HomeCard = (props) => {
 
                 });
 
-            }
+            };
 
-        }
+        };
 
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -94,6 +96,8 @@ const HomeCard = (props) => {
         if (eventBoolean && !cardClickBoolean) {
 
             if (!props.isCardAdded) {
+
+                // Card addition
 
                 setDynamicCardBackgroundColor({
 
@@ -107,14 +111,12 @@ const HomeCard = (props) => {
 
                 setCardClickBoolean(true);
 
-            }
-
-            //added
+            };
 
 
         } else if (eventBoolean && cardClickBoolean) {
 
-            //removed
+            // Card subtraction
 
             setDynamicCardBackgroundColor({
 
@@ -139,28 +141,31 @@ const HomeCard = (props) => {
 
             });
 
-        }
+        };
+
+        // Mobile devices UX for disabling second card addition
 
         if (window.screen.width < 768) {
 
             if (props.isCardAdded && !cardClickBoolean) {
 
                 setShakeCardBoolean(true);
-                
+
                 setTimeout(() => {
+
                     setShakeCardBoolean(false);
+
                 }, 500);
 
                 if (/android/i.test(navigator.userAgent)) {
 
-                    console.log("vibrate!");
                     window.navigator.vibrate(200);
 
-                }
+                };
 
-            }
+            };
 
-        }
+        };
 
     };
 
@@ -196,7 +201,7 @@ const HomeCard = (props) => {
 
         </div>
 
-    )
+    );
 
 };
 

@@ -1,61 +1,87 @@
 .CardsLoader {
-    width: 60px;
-    height: 60px;
-    margin: 2rem auto;
+  width: 60px;
+  height: 60px;
+  margin: 2rem auto;
+}
+
+.CardsLoader .SkCube {
+  width: 33%;
+  height: 33%;
+  background-color: #fff;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.CardsLoader .SkCube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.CardsLoader .SkCube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.CardsLoader .SkCube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.CardsLoader .SkCube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.CardsLoader .SkCube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.CardsLoader .SkCube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.CardsLoader .SkCube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.CardsLoader .SkCube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.CardsLoader .SkCube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
   }
-  
-  .CardsLoader .SkCube {
-    width: 33%;
-    height: 33%;
-    background-color: #fff;
-    float: left;
-    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
   }
-  .CardsLoader .SkCube1 {
-    -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
-  .CardsLoader .SkCube2 {
-    -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
-  .CardsLoader .SkCube3 {
-    -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s; }
-  .CardsLoader .SkCube4 {
-    -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
-  .CardsLoader .SkCube5 {
-    -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
-  .CardsLoader .SkCube6 {
-    -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
-  .CardsLoader .SkCube7 {
-    -webkit-animation-delay: 0s;
-            animation-delay: 0s; }
-  .CardsLoader .SkCube8 {
-    -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
-  .CardsLoader .SkCube9 {
-    -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
-  
-  @-webkit-keyframes sk-cubeGridScaleDelay {
-    0%, 70%, 100% {
-      -webkit-transform: scale3D(1, 1, 1);
-              transform: scale3D(1, 1, 1);
-    } 35% {
-      -webkit-transform: scale3D(0, 0, 1);
-              transform: scale3D(0, 0, 1); 
-    }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
   }
-  
-  @keyframes sk-cubeGridScaleDelay {
-    0%, 70%, 100% {
-      -webkit-transform: scale3D(1, 1, 1);
-              transform: scale3D(1, 1, 1);
-    } 35% {
-      -webkit-transform: scale3D(0, 0, 1);
-              transform: scale3D(0, 0, 1);
-    } 
+
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
   }
+}

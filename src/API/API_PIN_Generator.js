@@ -11,7 +11,7 @@ export const generatePIN = () => {
 
     let PIN = "JN-" + firstFourDigitNumber + "-" + secondFourDigitNumber + "-" + firstLetter + secondLetter;
 
-    // You can copy the generated PIN inside the console.
+    // For testing and development you can copy the generated PIN from the console.
     console.log(PIN);
 
 };
@@ -29,18 +29,16 @@ const convertNumberToASCIILetter = (fourDigitNumber) => {
         if (i % 2 === 0) {
 
             newMultipliedNumber = splittedNumberArray[i] * 1;
-
             checkIfTwoDigitNumber(newMultipliedNumber);
 
         } else {
 
             newMultipliedNumber = splittedNumberArray[i] * 2;
-
             checkIfTwoDigitNumber(newMultipliedNumber);
 
-        }
+        };
 
-    }
+    };
 
     let sumModifiedNumbers = 0;
 
@@ -48,7 +46,7 @@ const convertNumberToASCIILetter = (fourDigitNumber) => {
 
         sumModifiedNumbers += newModifiedArray[i];
 
-    }
+    };
 
     // Preperation before ASCII
     sumModifiedNumbers = (sumModifiedNumbers % 26) + 65;
@@ -73,11 +71,13 @@ const checkIfTwoDigitNumber = (newMultipliedNumber) => {
         let newTwoDigitSumNumber = 0;
 
         for (let i = 0; i < twoDigitNumberSumArray.length; i++) {
+
             newTwoDigitSumNumber += twoDigitNumberSumArray[i];
-        }
+
+        };
 
         newModifiedArray.push(newTwoDigitSumNumber);
 
-    }
+    };
 
 };

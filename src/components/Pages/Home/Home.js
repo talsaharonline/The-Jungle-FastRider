@@ -24,16 +24,18 @@ import * as actionTypes from '../../../store/actions';
 const Home = (props) => {
 
     const { addToast } = useToasts();
-    const [displayButton, setDisplayButton] = useState(false);
+    const [redirectToAccessCodesPage, setRedirectToAccessCodesPage] = useState([]);
+
+    const [displaySubmitButton, setDisplaySubmitButton] = useState(false);
+    const [displayCardsLoader, setDisplayCardsLoader] = useState(false);
+    const [displayButtonLoader, setDisplayButtonLoader] = useState(false);
+
     const [fastRiderRides, setFastRiderRides] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [savedUserPIN, setSavedUserPIN] = useState("");
     const [chosenCardRideID, setChosenCardRideID] = useState(0);
     const [accessData, setAccessData] = useState([]);
-    const [redirectToAccessCodes, setRedirectToAccessCodes] = useState([]);
-    const [showCardsLoader, setShowCardsLoader] = useState(false);
-    const [showButtonLoader, setShowButtonLoader] = useState(false);
-    // const [androidDeviceBoolean, setAndroidDeviceBoolean] = useState();
+
 
     useEffect(() => {
 
@@ -41,17 +43,17 @@ const Home = (props) => {
 
             if (props.scrollPosition <= 300) {
 
-                setDisplayButton(true);
+                setDisplaySubmitButton(true);
 
             } else {
 
-                setDisplayButton(false);
+                setDisplaySubmitButton(false);
 
             }
 
         } else {
 
-            setDisplayButton(true);
+            setDisplaySubmitButton(true);
 
         }
 
@@ -59,32 +61,19 @@ const Home = (props) => {
 
     useEffect(() => {
 
-        if (chosenCardRideID) {
-            console.log(chosenCardRideID);
-            console.log("a card was added");
-
-        } else {
-            console.log(chosenCardRideID);
-            console.log("a card was removed");
-
-        }
-
-    }, [chosenCardRideID])
-
-
-    useEffect(() => {
-
         // localStorage.clear();
 
         setTimeout(() => {
+
             window.scroll({
                 top: 0,
                 left: 0,
                 behavior: 'smooth'
             });
+
         }, 100);
 
-        setShowCardsLoader(true);
+        setDisplayCardsLoader(true);
 
         API_Functions.getFastRiderRides()
 
@@ -96,7 +85,7 @@ const Home = (props) => {
 
                 setTimeout(() => {
 
-                    setShowCardsLoader(false);
+                    setDisplayCardsLoader(false);
                     setFastRiderRides(response);
 
                 }, 2000);
@@ -135,7 +124,7 @@ const Home = (props) => {
 
         if (inputValue && chosenCardRideID) {
 
-            setShowButtonLoader(true);
+            setDisplayButtonLoader(true);
 
             API_Functions.postChosenRide(inputValue, chosenCardRideID)
 
@@ -153,7 +142,7 @@ const Home = (props) => {
 
                     addToast(error.message, { appearance: 'error', autoDismiss: true });
 
-                    setShowButtonLoader(false);
+                    setDisplayButtonLoader(false);
 
                 });
 
@@ -165,10 +154,10 @@ const Home = (props) => {
             if (/android/i.test(navigator.userAgent)) {
 
                 window.navigator.vibrate(200);
-                
+
             }
 
-            setShowButtonLoader(false);
+            setDisplayButtonLoader(false);
 
         }
 
@@ -180,9 +169,9 @@ const Home = (props) => {
 
             props.addAccessCard(accessData);
 
-            setRedirectToAccessCodes(<Redirect to={{ pathname: "/access-codes" }} />)
+            setRedirectToAccessCodesPage(<Redirect to={{ pathname: "/access-codes" }} />)
 
-            setShowButtonLoader(false);
+            setDisplayButtonLoader(false);
 
         }
 
@@ -193,7 +182,7 @@ const Home = (props) => {
 
         <div className={styles.Home}>
 
-            {redirectToAccessCodes ? redirectToAccessCodes : null}
+            {redirectToAccessCodesPage ? redirectToAccessCodesPage : null}
 
             <div className={styles.Titles}>
 
@@ -223,8 +212,7 @@ const Home = (props) => {
 
             <div
                 className={[styles.InputAndBtnContainer, Animations.FadeIn].join(' ')}
-                style={{ animationDelay: '0.6s' }}
-            >
+                style={{ animationDelay: '0.6s' }}>
 
                 <Input
                     onChangeHandler={onChangeInputHandler}
@@ -236,8 +224,8 @@ const Home = (props) => {
                 {window.screen.width > 768
                     && <Button
                         onClickHandler={onSubmitButtonHandler}
-                        visibility={displayButton}>
-                        {showButtonLoader
+                        visibility={displaySubmitButton}>
+                        {displayButtonLoader
                             ? <ButtonLoader />
                             : "SUBMIT"}
                     </Button>}
@@ -247,8 +235,8 @@ const Home = (props) => {
             {window.screen.width < 768
                 && <Button
                     onClickHandler={onSubmitButtonHandler}
-                    visibility={displayButton}>
-                    {showButtonLoader
+                    visibility={displaySubmitButton}>
+                    {displayButtonLoader
                         ? <ButtonLoader />
                         : "SUBMIT"}
                 </Button>}
@@ -272,12 +260,11 @@ const Home = (props) => {
 
                     />
 
-                )) : showCardsLoader && <CardsLoader />}
+                )) : displayCardsLoader && <CardsLoader />}
 
             </div>
 
-
-        </div >
+        </div>
 
     );
 

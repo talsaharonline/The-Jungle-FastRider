@@ -1,18 +1,16 @@
 import React from 'react';
+
 import styles from './Logo.module.css';
 import logoImage from '../../../assets/Logo/Logo.png';
 
-const Logo = () => {
+const Logo = () => (
 
-    return (
+    <div className={styles.LogoContainer}>
 
-        <div className={styles.LogoContainer}>
+        <img className={styles.Logo} src={logoImage} alt="" />
 
-            <img className={styles.Logo} src={logoImage} alt="" />
-
-        </div>
-    )
-
-};
+    </div>
+    
+);
 
 export default Logo;

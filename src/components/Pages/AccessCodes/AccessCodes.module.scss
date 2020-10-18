@@ -25,8 +25,8 @@
     }
 
     .NoCodesMonkeyImg {
-      object-fit: cover;
       width: 50%;
+      object-fit: cover;
       margin-bottom: 2rem;
     }
   }
@@ -55,6 +55,7 @@
 @media only screen and (min-width: 120rem) {
   .AccessCodes {
     margin-top: 10rem;
+
     .NoCodesContainer {
       .Message {
         font-size: xx-large;
