@@ -71,7 +71,7 @@ Each PIN key can provide a new access code with unlimited FastRide time frames o
 
 - This project is fully responsive, including larger desktop screens and mobile devices.
 - This project was deployed directly from github to Netlify.
-- This project was built with Local Storage in order to have a better user experience when refreshing the browser (it saves your access code).
+- This project was built with Local Storage in order to have a better user experience when refreshing the browser (it saves your access code and your valid PIN).
 
 <br />
 
