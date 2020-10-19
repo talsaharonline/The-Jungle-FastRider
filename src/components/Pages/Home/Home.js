@@ -157,27 +157,24 @@ const Home = (props) => {
 
                     setAccessData(
 
-                        [
-
-                            {
-                                id: response.id,
-                                ride: {
-                                    id: response.ride.id,
-                                    zone: {
-                                        id: response.ride.zone.id,
-                                        name: chosenCardProperties.zoneName,
-                                        color: chosenCardProperties.color
-                                    },
-                                    name: chosenCardProperties.playground,
-                                    remaining_tickets: response.ride.remainint_tickets,
-                                    return_time: chosenCardProperties.returnTime
+                        [{
+                            id: response.id,
+                            ride: {
+                                id: response.ride.id,
+                                zone: {
+                                    id: response.ride.zone.id,
+                                    name: chosenCardProperties.zoneName,
+                                    color: chosenCardProperties.color
                                 },
-                                access_code: response.access_code,
+                                name: chosenCardProperties.playground,
+                                remaining_tickets: response.ride.remainint_tickets,
                                 return_time: chosenCardProperties.returnTime
-                            }
+                            },
+                            access_code: response.access_code,
+                            return_time: chosenCardProperties.returnTime
+                        }]
 
-
-                        ]);
+                    );
 
                 }, 2000);
 
@@ -263,7 +260,7 @@ const Home = (props) => {
 
         } else {
 
-            addToast("Please enter your PIN code and choose a playground.",
+            addToast("Please enter your PIN code and choose a playground",
                 { appearance: 'error', autoDismiss: true });
 
             if (/android/i.test(navigator.userAgent)) {
