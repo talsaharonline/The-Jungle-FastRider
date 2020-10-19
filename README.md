@@ -61,8 +61,7 @@
 This project generates and prints a new valid PIN code every time you refresh the home page,
 which you can copy in the console inside your browser.
 
-Each PIN key can provide a new access code only in the playground time frame,
-which means you cannot get a second access code inside the playground time frame.
+Each PIN key can provide a new access code with unlimited FastRide time frames or tickets runout.
 
 <br />
 
