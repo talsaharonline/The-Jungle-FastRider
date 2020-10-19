@@ -54,7 +54,7 @@ const AccessCard = (props) => {
 
                 <h2 className={styles.Time}>
 
-                    {props.data.length.return_time && props.data[0].return_time.slice(11, 16)}
+                    {props.data.length && props.data[0].return_time.slice(11, 16)}
 
                 </h2>
 
